@@ -34,12 +34,12 @@ export const ContainerContactContent = styled.div`
     color: var(--verdeOscuro);
   }
 
-  .container-logos {
+  .container__logos {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
   }
 
   .contact__p {

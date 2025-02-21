@@ -56,13 +56,36 @@ export const Contact = () => {
             <p className="contact__p">Llamame, mandame un mensaje o un email</p>
           </div>
           <div className="container__logos">
-            {/* Aquí van tus logos y enlaces */}
+            <a className="contact__text">
+              <img
+                src="../assets/imgs/logos/logo-whatsapp.png"
+                alt="Logo whatsapp"
+                className="logo__contact"
+              />
+              +5491166722505
+            </a>
+            <a className="contact__text">
+              <img
+                src="../assets/imgs/logos/logo-email.png"
+                alt="Logo email"
+                className="logo__contact"
+              />
+              dmoras@isdsa.com.ar
+            </a>
+            <a className="contact__text">
+              <img
+                src="../assets/imgs/logos/logo-email.png"
+                alt="Logo email"
+                className="logo__contact"
+              />
+              danielmoras069@gmail.com
+            </a>
           </div>
         </ContainerContactContent>
 
         <ContactForm onSubmit={handleSubmit}>
           <HacheTres>Formulario de contacto</HacheTres>
-          <p>Tu consulta no molesta, estamos para ayudarte</p>
+          <p>Tu consulta no molesta, estamos para ayudarte!</p>
           <FormContainer className="form__container">
             <input
               type="text"
