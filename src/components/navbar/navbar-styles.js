@@ -123,15 +123,6 @@ export const HeaderContainer = styled.header`
       margin-bottom: 1rem; /* Espacio entre cada dropdown */
     }
 
-    .nav__toggle,
-    .nav__menu,
-    .dropdown__item,
-    .nav__link {
-      user-select: none; /* Evita que se seleccione texto */
-      -webkit-user-select: none; /* Safari */
-      -ms-user-select: none; /* Edge */
-    }
-
     .dropdown__menu {
       position: absolute; /* Permite ajustar con precisión */
       top: 0; /* Alínealo al nivel superior del contenedor */
