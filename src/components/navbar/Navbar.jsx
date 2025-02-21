@@ -23,6 +23,9 @@ export const Navbar = () => {
         document
           .getElementById(location.hash.substring(1))
           ?.scrollIntoView({ behavior: "smooth" });
+
+        // Borra el hash de la URL sin recargar la página
+        window.history.replaceState(null, null, " ");
       }, 100);
     }
   }, [location]);
