@@ -69,6 +69,7 @@ export const Navbar = () => {
           <LogoImg
             src="../../assets/imgs/logos/logo-moras.png"
             alt="Logo Moras y compañia"
+            className="logo__moras__isd"
           />
         </Link>
         {/* Menú móvil */}

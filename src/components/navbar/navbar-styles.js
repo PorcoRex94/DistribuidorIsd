@@ -60,9 +60,6 @@ export const HeaderContainer = styled.header`
     .nav__menu {
       width: 46%;
     }
-
-    @media (max-width: 1090px) {
-    }
   }
   @media screen and (max-width: 960px) {
     .nav__menu {
@@ -101,7 +98,6 @@ export const HeaderContainer = styled.header`
     /* Iconos de apertura y cierre */
     .nav__toggle {
       display: block;
-      right: 1.5rem;
       width: 40px;
       height: 40px;
       z-index: 1100;
@@ -155,6 +151,12 @@ export const HeaderContainer = styled.header`
       color: white;
     }
   }
+
+  @media (min-width: 360px) {
+    .logo__moras__isd {
+      width: 185px;
+    }
+  }
 `;
 
 export const NavbarContainer = styled.nav`
@@ -162,16 +164,10 @@ export const NavbarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 2.5rem;
+  padding: 0.5rem 1.5rem;
   height: 100px;
   width: 100%;
   background-color: var(--verdeOscuro);
-
-  button {
-    background-color: var(--verdeOscuro);
-    border: none;
-    cursor: pointer;
-  }
 `;
 
 export const LogoImg = styled.img`
