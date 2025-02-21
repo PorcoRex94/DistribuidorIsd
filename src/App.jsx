@@ -19,24 +19,26 @@ import { equiposEtiquetas } from "./data/equiposEtiquetas";
 import { FloraJTresCinco } from "./components/flora-swift/FloraJTresCinco";
 
 function App() {
-  useEffect(() => {
-    const updateScrollbarWidth = () => {
-      const scrollbarWidth =
-        window.innerWidth - document.documentElement.clientWidth;
-      document.documentElement.style.setProperty(
-        "--scrollbar-width",
-        `${scrollbarWidth}px`
-      );
-      console.log("Scrollbar width set to:", scrollbarWidth);
-    };
+  const setScrollbarWidth = () => {
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
 
-    updateScrollbarWidth();
-    window.addEventListener("resize", updateScrollbarWidth);
+    // Filtramos valores demasiado grandes (ej. > 40px)
+    const validScrollbarWidth = Math.max(0, Math.min(scrollbarWidth, 40));
 
-    return () => {
-      window.removeEventListener("resize", updateScrollbarWidth);
-    };
-  }, []);
+    console.log("window.innerWidth:", window.innerWidth);
+    console.log(
+      "document.documentElement.clientWidth:",
+      document.documentElement.clientWidth
+    );
+    console.log("Calculated scrollbar width:", scrollbarWidth);
+    console.log("Valid scrollbar width:", validScrollbarWidth);
+
+    document.documentElement.style.setProperty(
+      "--scrollbar-width",
+      `${validScrollbarWidth}px`
+    );
+  };
   return (
     <>
       <Router>
