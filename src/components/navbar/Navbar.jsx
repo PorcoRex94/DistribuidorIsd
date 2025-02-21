@@ -18,14 +18,12 @@ export const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const hash = location.hash;
-    if (hash) {
-      const sectionId = hash.replace("#", "");
+    if (location.hash && document.getElementById(location.hash.substring(1))) {
       setTimeout(() => {
         document
-          .getElementById(sectionId)
+          .getElementById(location.hash.substring(1))
           ?.scrollIntoView({ behavior: "smooth" });
-      }, 100); // Pequeño delay para asegurarnos de que la navegación ocurrió
+      }, 100);
     }
   }, [location]);
 

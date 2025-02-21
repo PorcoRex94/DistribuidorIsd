@@ -123,8 +123,10 @@ export const HeaderContainer = styled.header`
       margin-bottom: 1rem; /* Espacio entre cada dropdown */
     }
 
-    .dropdown__item {
-      user-select: none;
+    .dropdown__item:focus,
+    .dropdown__item:active {
+      outline: none !important;
+      box-shadow: none !important;
     }
 
     .dropdown__menu {
@@ -153,6 +155,12 @@ export const HeaderContainer = styled.header`
     .nav__link {
       width: fit-content;
       color: white;
+    }
+
+    .nav__link:focus,
+    .nav__link:active {
+      outline: none !important;
+      box-shadow: none !important;
     }
   }
 `;
