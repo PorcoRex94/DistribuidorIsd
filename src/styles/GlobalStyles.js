@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
   --amarilloClaro:rgb(248, 203, 67);
   --azul: #1d3557;
   --grisP: #6c757d;
-  --crema:rgba(220, 213, 142, 0.79);
+  --crema:rgba(220, 214, 142, 0.97);
 }
 
 h1{

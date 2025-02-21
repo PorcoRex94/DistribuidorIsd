@@ -5,6 +5,20 @@ export const ChatContainer = styled.div`
   bottom: 20px;
   right: 20px;
   z-index: 1000;
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-25px);
+    }
+  }
+
+  .bounce {
+    animation: bounce 1s ease-in-out;
+  }
 `;
 
 export const ChatButton = styled.button`
@@ -25,16 +39,21 @@ export const ChatButton = styled.button`
   &:hover {
     transform: scale(1.1);
   }
+
+  .logo__contact {
+    width: 55px;
+  }
 `;
 
 export const ChatPopup = styled.div`
   position: fixed;
   bottom: 100px;
   right: 20px;
-  width: 300px;
+  width: 500px;
   background: white;
   border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--azul);
+  box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.4);
   padding: 20px;
   display: ${(props) => (props.$isOpen ? "block" : "none")};
 `;

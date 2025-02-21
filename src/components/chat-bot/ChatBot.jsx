@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ChatContainer,
   ChatButton,
@@ -12,8 +12,19 @@ import {
 
 export const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isBouncing, setIsBouncing] = useState(false);
   const [message, setMessage] = useState("");
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  useEffect(() => {
+    // Cada 5 segundos activa la animación por 1 segundo
+    const interval = setInterval(() => {
+      setIsBouncing(true);
+      setTimeout(() => setIsBouncing(false), 1000);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const buildWhatsAppUrl = (message) => {
     const phoneNumber = "5491166722505"; // Número internacional
@@ -34,8 +45,19 @@ export const ChatBot = () => {
 
   return (
     <ChatContainer>
-      <ChatButton onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "×" : "💬"}
+      <ChatButton
+        onClick={() => setIsOpen(!isOpen)}
+        className={isBouncing ? "bounce" : ""}
+      >
+        {isOpen ? (
+          "×"
+        ) : (
+          <img
+            src="../assets/imgs/logos/logo-whatsapp.png"
+            alt="Logo whatsapp"
+            className="logo__contact"
+          />
+        )}
       </ChatButton>
       <ChatPopup $isOpen={isOpen}>
         <CloseButton onClick={() => setIsOpen(false)}>×</CloseButton>

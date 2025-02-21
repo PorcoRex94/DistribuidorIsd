@@ -207,7 +207,7 @@ export const equiposEtiquetas = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     marca: "Industrial Inkjet",
     nombre: "Monoprint | Colorprint",
     categoria: "Impresión UV",

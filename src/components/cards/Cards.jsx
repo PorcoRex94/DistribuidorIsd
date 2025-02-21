@@ -102,7 +102,6 @@ export const Card = ({ equipo, rubro }) => {
 
         {/* Reverso de la tarjeta */}
         <div className="card-back">
-          <h3>Detalles</h3>
           <div className="p__detalles">
             {equipo.detalles.split("\n").map((line, index) => (
               <p key={index}>{line}</p>

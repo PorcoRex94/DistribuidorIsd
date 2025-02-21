@@ -166,6 +166,12 @@ export const NavbarContainer = styled.nav`
   height: 100px;
   width: 100%;
   background-color: var(--verdeOscuro);
+
+  button {
+    background-color: var(--verdeOscuro);
+    border: none;
+    cursor: pointer;
+  }
 `;
 
 export const LogoImg = styled.img`
@@ -240,8 +246,8 @@ export const ListContainer = styled.ul`
   }
 
   .nav__link:hover,
-  .dropdown__arrow:hover {
-    color: white;
+  .nav__link:hover .dropdown__arrow {
+    color: white; /* Color en hover */
   }
 
   @media (max-width: 1090px) {

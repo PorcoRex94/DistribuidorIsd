@@ -9,12 +9,26 @@ import {
   NavbarContainer,
   ListContainer,
 } from "./navbar-styles";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const Navbar = () => {
   const toggleRef = useRef(null);
   const navRef = useRef(null);
   const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      const sectionId = hash.replace("#", "");
+      setTimeout(() => {
+        document
+          .getElementById(sectionId)
+          ?.scrollIntoView({ behavior: "smooth" });
+      }, 100); // Pequeño delay para asegurarnos de que la navegación ocurrió
+    }
+  }, [location]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -39,6 +53,13 @@ export const Navbar = () => {
 
   const handleDropdownToggle = (index) => {
     setActiveDropdown((prev) => (prev === index ? null : index)); // Alternar entre abierto/cerrado
+  };
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -71,7 +92,7 @@ export const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/" className="nav__link">
+              <Link to="/#nosotros" className="nav__link">
                 Nosotros
               </Link>
             </li>
@@ -147,7 +168,7 @@ export const Navbar = () => {
               </ul>
             </li>
             <li>
-              <Link to="/" className="nav__link">
+              <Link to="/#contact" className="nav__link">
                 Contacto
               </Link>
             </li>

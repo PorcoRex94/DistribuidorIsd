@@ -77,7 +77,7 @@ function App() {
                 rubro="etiquetas"
                 data={equiposEtiquetas}
                 title="Etiquetas"
-                heroImage="../../assets/imgs/img/editorial.jpg"
+                heroImage="../../assets/imgs/img/etiquetas.jpg"
               />
             }
           />
