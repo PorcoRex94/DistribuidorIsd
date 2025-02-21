@@ -123,8 +123,8 @@ export const HeaderContainer = styled.header`
       margin-bottom: 1rem; /* Espacio entre cada dropdown */
     }
 
-    .dropdown__item:focus {
-      outline: none;
+    .dropdown__item {
+      user-select: none;
     }
 
     .dropdown__menu {
