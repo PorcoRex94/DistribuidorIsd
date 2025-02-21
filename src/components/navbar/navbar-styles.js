@@ -25,6 +25,7 @@ export const HeaderContainer = styled.header`
     inset: 0;
     margin: auto;
     font-size: 1.5rem;
+    cursor: pointer;
     transition: opacity 0.3s, transform 0.4s;
   }
 
@@ -146,7 +147,15 @@ export const HeaderContainer = styled.header`
     }
 
     .nav__link {
+      width: fit-content;
       color: white;
+    }
+
+    .nav__toggle,
+    .nav__burger,
+    .nav__close,
+    .dropdown__item {
+      -webkit-tap-highlight-color: transparent;
     }
   }
 `;
