@@ -123,6 +123,10 @@ export const HeaderContainer = styled.header`
       margin-bottom: 1rem; /* Espacio entre cada dropdown */
     }
 
+    .dropdown__item:focus {
+      outline: none;
+    }
+
     .dropdown__menu {
       position: absolute; /* Permite ajustar con precisión */
       top: 0; /* Alínealo al nivel superior del contenedor */

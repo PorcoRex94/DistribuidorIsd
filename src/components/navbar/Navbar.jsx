@@ -110,7 +110,6 @@ export const Navbar = () => {
               <div
                 className="nav__link"
                 onClick={() => handleDropdownToggle(0)}
-                tabindex="-1"
               >
                 Rubros <IoIosArrowDown className="dropdown__arrow" />
               </div>
