@@ -31,19 +31,26 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Si el clic ocurre fuera del dropdown, cerramos el menú
-      if (activeDropdown !== null && !event.target.closest(".dropdown__item")) {
-        setActiveDropdown(null);
+      if (
+        navRef.current &&
+        !navRef.current.contains(event.target) &&
+        toggleRef.current &&
+        !toggleRef.current.contains(event.target)
+      ) {
+        // Si el menú está abierto, lo cerramos
+        if (navRef.current.classList.contains("show-menu")) {
+          navRef.current.classList.remove("show-menu");
+          toggleRef.current.classList.remove("show-icon");
+        }
       }
     };
 
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
-    // Limpieza del evento cuando el componente se desmonta
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [activeDropdown]);
+  }, []);
 
   const toggleMenu = () => {
     navRef.current.classList.toggle("show-menu");
@@ -86,12 +93,12 @@ export const Navbar = () => {
         <div className="nav__menu" id="nav-menu" ref={navRef}>
           <ListContainer className="nav__list">
             <li>
-              <Link to="/" className="nav__link">
+              <Link to="/" className="nav__link" onClick={toggleMenu}>
                 Inicio
               </Link>
             </li>
             <li>
-              <Link to="/#nosotros" className="nav__link">
+              <Link to="/#nosotros" className="nav__link" onClick={toggleMenu}>
                 Nosotros
               </Link>
             </li>
@@ -167,7 +174,7 @@ export const Navbar = () => {
               </ul>
             </li>
             <li>
-              <Link to="/#contact" className="nav__link">
+              <Link to="/#contact" className="nav__link" onClick={toggleMenu}>
                 Contacto
               </Link>
             </li>
