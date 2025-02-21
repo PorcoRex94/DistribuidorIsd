@@ -48,7 +48,7 @@ export const Contact = () => {
         </ContainerContactContent>
         <ContactForm id="contact__form">
           <HacheTres>Formulario de contacto</HacheTres>
-          <p>Tu consulta no molesta, estamos para ayudarte</p>
+          <p>Tu consulta no molesta, estamos para ayudarte!</p>
           <FormContainer className="form__container">
             <input
               type="text"
