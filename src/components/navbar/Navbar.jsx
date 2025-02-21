@@ -15,7 +15,6 @@ export const Navbar = () => {
   const toggleRef = useRef(null);
   const navRef = useRef(null);
   const [activeDropdown, setActiveDropdown] = useState(null);
-
   const location = useLocation();
 
   useEffect(() => {

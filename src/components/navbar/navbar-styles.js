@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  width: 100vw;
+  width: calc(100vw - var(--scrollbar-width));
 
   a {
     color: inherit;

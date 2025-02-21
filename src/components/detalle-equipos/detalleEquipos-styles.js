@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const GlobalContainer = styled.main`
-  width: calc(100vw - var(--scroll-width, 15px));
+  width: calc(100vw - var(--scrollbar-width));
 `;
 
 export const ImgHUnoContainer = styled.div`

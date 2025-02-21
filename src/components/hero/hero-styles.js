@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeroContainer = styled.section`
   position: relative;
-  width: 100vw;
+  width: calc(100vw - var(--scrollbar-width));
   height: 60vh;
   background-size: cover;
   background-position: center;
