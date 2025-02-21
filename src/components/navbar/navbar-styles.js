@@ -162,16 +162,24 @@ export const NavbarContainer = styled.nav`
   height: 100px;
   width: 100%;
   background-color: var(--verdeOscuro);
+
+  @media screen and (max-width: 960px) {
+    height: 70px;
+  }
+
+  @media (min-width: 360px) and (max-width: 500px) {
+    padding: 0.5rem;
+  }
 `;
 
 export const LogoImg = styled.img`
-  width: 230px;
   height: auto;
 
-  @media (min-width: 500) {
+  @media (min-width: 500px) {
+    width: 230px;
   }
 
-  @media (min-width: 360px) {
+  @media (min-width: 360px) and (max-width: 500px) {
     width: 205px;
   }
 `;
