@@ -151,12 +151,6 @@ export const HeaderContainer = styled.header`
       color: white;
     }
   }
-
-  @media (min-width: 360px) {
-    .logo__moras__isd {
-      width: 185px;
-    }
-  }
 `;
 
 export const NavbarContainer = styled.nav`
@@ -173,6 +167,13 @@ export const NavbarContainer = styled.nav`
 export const LogoImg = styled.img`
   width: 230px;
   height: auto;
+
+  @media (min-width: 500) {
+  }
+
+  @media (min-width: 360px) {
+    width: 205px;
+  }
 `;
 
 export const ListContainer = styled.ul`
