@@ -53,14 +53,20 @@ export const Navbar = () => {
     const menuIsOpen = navRef.current.classList.contains("show-menu");
 
     if (!menuIsOpen) {
-      // Bloquea el scroll y guarda la posición actual
-      document.body.style.overflow = "hidden";
+      // Guarda la posición actual del scroll antes de bloquear
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
     } else {
-      // Restaura el scroll al cerrarlo
-      document.body.style.overflow = "";
+      // Restaura la posición del scroll y desbloquea
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
 
-    // Alterna el estado del menú
+    // Alterna clases del menú
     navRef.current.classList.toggle("show-menu");
     toggleRef.current.classList.toggle("show-icon");
   };
@@ -80,7 +86,13 @@ export const Navbar = () => {
     if (window.innerWidth <= 960) {
       navRef.current.classList.remove("show-menu");
       toggleRef.current.classList.remove("show-icon");
-      document.body.style.overflow = ""; // Restaura el scroll
+
+      // Restaura el scroll
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
   };
 
