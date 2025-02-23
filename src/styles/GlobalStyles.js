@@ -28,6 +28,7 @@ h1{
 
 body{
   overflow-x: hidden;
+  overflow-y: scroll !important;
 }
 
 `;

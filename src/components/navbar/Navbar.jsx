@@ -88,6 +88,13 @@ export const Navbar = () => {
     }
   };
 
+  const closeMenu = () => {
+    if (window.innerWidth <= 960) {
+      // Solo cerrar en móviles
+      toggleMenu();
+    }
+  };
+
   return (
     <HeaderContainer className="header">
       <NavbarContainer className="nav container">
@@ -139,7 +146,10 @@ export const Navbar = () => {
                   <Link
                     to="/editorial"
                     className="dropdown__link"
-                    onClick={() => setActiveDropdown(null)}
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      closeMenu();
+                    }}
                   >
                     <FaRegHandPointRight className="hand__icon" /> Editorial
                   </Link>
@@ -148,7 +158,10 @@ export const Navbar = () => {
                   <Link
                     to="/etiquetas"
                     className="dropdown__link"
-                    onClick={() => setActiveDropdown(null)}
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      closeMenu();
+                    }}
                   >
                     <FaRegHandPointRight className="hand__icon" /> Etiquetas
                   </Link>
@@ -157,25 +170,22 @@ export const Navbar = () => {
                   <Link
                     to="/packaging"
                     className="dropdown__link"
-                    onClick={() => setActiveDropdown(null)}
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      closeMenu();
+                    }}
                   >
                     <FaRegHandPointRight className="hand__icon" /> Packaging
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/sublimacion"
-                    className="dropdown__link"
-                    onClick={() => setActiveDropdown(null)}
-                  >
-                    <FaRegHandPointRight className="hand__icon" /> Sublimación
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     to="/textil"
                     className="dropdown__link"
-                    onClick={() => setActiveDropdown(null)}
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      closeMenu();
+                    }}
                   >
                     <FaRegHandPointRight className="hand__icon" /> Industria
                     Textil
@@ -185,7 +195,10 @@ export const Navbar = () => {
                   <Link
                     to="/comunicacionVisual"
                     className="dropdown__link"
-                    onClick={() => setActiveDropdown(null)}
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      closeMenu();
+                    }}
                   >
                     <FaRegHandPointRight className="hand__icon" /> Comunicación
                     Visual

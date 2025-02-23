@@ -187,7 +187,7 @@ export const LogoImg = styled.img`
   }
 
   @media (min-width: 360px) and (max-width: 500px) {
-    width: 205px;
+    width: 200px;
   }
 `;
 
