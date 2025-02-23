@@ -38,11 +38,7 @@ export const Navbar = () => {
         toggleRef.current &&
         !toggleRef.current.contains(event.target)
       ) {
-        // Si el menú está abierto, lo cerramos
-        if (navRef.current.classList.contains("show-menu")) {
-          navRef.current.classList.remove("show-menu");
-          toggleRef.current.classList.remove("show-icon");
-        }
+        closeMenu();
       }
     };
 
@@ -57,22 +53,14 @@ export const Navbar = () => {
     const menuIsOpen = navRef.current.classList.contains("show-menu");
 
     if (!menuIsOpen) {
-      // Guarda la posición actual del scroll antes de bloquear
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.position = "fixed";
-      document.body.style.width = "100%";
+      // Bloquea el scroll y guarda la posición actual
       document.body.style.overflow = "hidden";
     } else {
       // Restaura el scroll al cerrarlo
-      const scrollY = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
       document.body.style.overflow = "";
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
 
-    // Alterna clases del menú
+    // Alterna el estado del menú
     navRef.current.classList.toggle("show-menu");
     toggleRef.current.classList.toggle("show-icon");
   };
@@ -90,8 +78,9 @@ export const Navbar = () => {
 
   const closeMenu = () => {
     if (window.innerWidth <= 960) {
-      // Solo cerrar en móviles
-      toggleMenu();
+      navRef.current.classList.remove("show-menu");
+      toggleRef.current.classList.remove("show-icon");
+      document.body.style.overflow = ""; // Restaura el scroll
     }
   };
 
