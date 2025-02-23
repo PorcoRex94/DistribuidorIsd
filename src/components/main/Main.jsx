@@ -40,7 +40,12 @@ export const Main = () => {
     <main className="main">
       <Hero
         backgroundImage={"../../assets/imgs/img/hero-portada.jpg"}
-        title={"Daniel Moras - Distribuidor Oficial de ISD.SA"}
+        title={
+          <>
+            Daniel Moras <span className="hide-on-mobile">-</span> Distribuidor
+            Oficial de ISD.SA
+          </>
+        }
       />
       <SectionContainer id="nosotros">
         <HacheDos>Sobre Nosotros</HacheDos>

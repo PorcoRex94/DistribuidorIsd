@@ -14,6 +14,17 @@ export const SectionContainer = styled.section`
     gap: 35px;
   }
 
+  @media (max-width: 768px) {
+    .nosotros__container {
+      gap: 20px;
+    }
+
+    @media (max-width: 500px) {
+    .nosotros__container {
+      gap: 10px;
+    }
+  }
+
   .text__nosotros {
     text-align: center;
     font-size: 1rem;

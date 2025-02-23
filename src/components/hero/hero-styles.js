@@ -30,18 +30,23 @@ export const HeroContainer = styled.section`
 
   .hache__uno {
     font-size: 3rem;
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   @media (max-width: 960px) {
     .hache__uno {
       font-size: 2rem;
     }
+    background-attachment: scroll;
   }
 
   @media (max-width: 500px) {
     .hache__uno {
       font-size: 1.5rem;
+    }
+
+    .hide-on-mobile {
+      display: none;
     }
   }
 `;
