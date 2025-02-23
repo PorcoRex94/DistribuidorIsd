@@ -53,6 +53,28 @@ export const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const checkMenuState = () => {
+      if (navRef.current?.classList.contains("show-menu")) {
+        document.body.style.overflow = "hidden";
+        document.body.style.height = "100vh";
+      } else {
+        document.body.style.overflow = "";
+        document.body.style.height = "";
+      }
+    };
+
+    const observer = new MutationObserver(checkMenuState);
+    if (navRef.current) {
+      observer.observe(navRef.current, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const toggleMenu = () => {
     navRef.current.classList.toggle("show-menu");
     toggleRef.current.classList.toggle("show-icon");
