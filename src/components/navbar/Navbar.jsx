@@ -16,7 +16,6 @@ export const Navbar = () => {
   const navRef = useRef(null);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (location.hash && document.getElementById(location.hash.substring(1))) {
@@ -54,18 +53,28 @@ export const Navbar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden"; // Bloquea el scroll
-    } else {
-      document.body.style.overflow = ""; // Restaura el scroll
-    }
-  }, [isMenuOpen]);
-
   const toggleMenu = () => {
+    const menuIsOpen = navRef.current.classList.contains("show-menu");
+
+    if (!menuIsOpen) {
+      // Guarda la posición actual del scroll antes de bloquear
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+    } else {
+      // Restaura el scroll al cerrarlo
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    }
+
+    // Alterna clases del menú
     navRef.current.classList.toggle("show-menu");
     toggleRef.current.classList.toggle("show-icon");
-    setIsMenuOpen((prev) => !prev); // Alterna el estado de isMenuOpen
   };
 
   const handleDropdownToggle = (index) => {
