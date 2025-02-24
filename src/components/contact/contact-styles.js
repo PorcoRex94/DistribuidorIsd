@@ -75,7 +75,7 @@ export const ContactForm = styled.form`
   padding: 3rem 0;
 
   .textArea {
-    width: 370px;
+    width: 400px;
     min-height: 200px;
   }
 
@@ -108,7 +108,7 @@ export const ContactForm = styled.form`
 
   @media (max-width: 360px) {
     .textArea {
-      width: 340px;
+      width: 355px;
     }
 
     p {
