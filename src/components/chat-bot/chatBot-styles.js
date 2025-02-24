@@ -56,6 +56,10 @@ export const ChatPopup = styled.div`
   box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.4);
   padding: 20px;
   display: ${(props) => (props.$isOpen ? "block" : "none")};
+
+  @media (max-width: 500px) {
+    width: 350px;
+  }
 `;
 
 export const Header = styled.div`
