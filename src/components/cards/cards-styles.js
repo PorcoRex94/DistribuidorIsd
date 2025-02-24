@@ -7,7 +7,7 @@ export const CardContainer = styled.div`
   cursor: pointer;
 
   @media (max-width: 768px) {
-    height: ${(props) => (props.$isDiji ? "635px" : "605px")};
+    height: ${(props) => (props.$isDiji ? "645px" : "605px")};
     min-width: ${(props) => (props.$isDiji ? "92.5vw" : "92.5vw")};
   }
 
@@ -171,13 +171,13 @@ export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: ${(props) => (props.$isDiji ? "flex-start" : "center")};
+    justify-content: ${(props) => (props.$isDiji ? "space-around" : "center")};
     gap: ${(props) => (props.$isDiji ? "15px" : "0px")};
     background-color: rgb(28, 119, 104);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     @media (max-width: 768px) {
-      gap: ${(props) => (props.$isDiji ? "10px" : "0px")};
+      gap: ${(props) => (props.$isDiji ? "7px" : "0px")};
       padding: ${(props) => (props.$isDiji ? "1rem" : "0px")};
     }
   }

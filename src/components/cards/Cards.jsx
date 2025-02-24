@@ -82,9 +82,7 @@ export const Card = ({ equipo, rubro }) => {
                 <div className="container__info">
                   <p className="p__description">{equipo.descripcion}</p>
                   <p className="p__description">{equipo.speach}</p>
-                  <p className="p__description">
-                    Para un mayor asesoramiento no dudes en consultarnos
-                  </p>
+
                   <Btn onClick={handleButtonClick}>Ver más..</Btn>
                 </div>
               </div>
