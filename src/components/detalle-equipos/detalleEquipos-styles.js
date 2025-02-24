@@ -59,6 +59,9 @@ export const ImgLogo = styled.img`
   @media (max-width: 960px) {
     width: 50%;
   }
+  @media (max-width: 768px) {
+    width: 70%;
+  }
 `;
 
 export const ImgEquipo = styled.img`
@@ -66,7 +69,10 @@ export const ImgEquipo = styled.img`
   height: auto;
 
   @media (max-width: 960px) {
-    width: 80%;
+    width: 70%;
+  }
+  @media (max-width: 768px) {
+    width: 90%;
   }
 `;
 
