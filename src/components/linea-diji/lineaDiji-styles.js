@@ -22,15 +22,16 @@ export const FirstContainer = styled.section`
   gap: 25px;
 
   @media (max-width: 1024px) {
-    width: 95%;
+    width: 100%;
   }
 
   @media (max-width: 960px) {
     gap: 35px;
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 768px) {
     gap: 15px;
+    padding: 2rem 0.5rem;
   }
 `;
 
@@ -41,6 +42,11 @@ export const SecondContainer = styled.div`
   justify-content: center;
   gap: 10px;
   width: 85%;
+
+  h3,
+  h2 {
+    text-align: center;
+  }
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -112,6 +118,12 @@ export const ThirdContainer = styled.div`
     }
     .img__third {
       width: 90%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      width: 100%;
     }
   }
 `;
