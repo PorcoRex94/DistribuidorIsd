@@ -108,7 +108,7 @@ export const FloraSwift = ({ heroImage, title }) => {
             por minuto con una precisión asombrosa, garantizando que cada página
             salga perfecta en la primera pasada.
           </p>
-          <p className="first__container__p global__p">
+          <p className="first__container__p global__p negocio__flora">
             ¡Llevá tu negocio a la cima con Flora!
           </p>
           <BtnA
@@ -180,7 +180,8 @@ export const FloraSwift = ({ heroImage, title }) => {
               A diferencia de la tecnología multi-pass, al estar el cabezal
               fijo, se eliminan los desajustes que podrían surgir con el
               movimiento, garantizando una impresión uniforme con detalles
-              precisos y colores siempre consistentes.
+              precisos y colores siempre consistentes, sin margen de error.
+              Decile adiós a los desajustes!
             </p>
           </ContainerContainerH>
         </ContainerHCP>

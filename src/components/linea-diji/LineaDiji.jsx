@@ -67,31 +67,31 @@ export const LineaDiji = ({ heroImage, title }) => {
           <ul>
             <li>
               <IoMdArrowRoundForward />
-              Máxima productividad, simplicidad y versatilidad
+              Máxima productividad, simplicidad y versatilidad.
             </li>
             <li>
               <IoMdArrowRoundForward />
-              Reducción de costos, tiempos y mano de obra
+              Reducción de costos, tiempos y mano de obra.
             </li>
             <li>
               <IoMdArrowRoundForward />
-              Sustentabilidad y ahorro energético
+              Sustentabilidad y ahorro energético.
             </li>
             <li>
               <IoMdArrowRoundForward />
-              Velocidad de impresión inigualable
+              Velocidad de impresión inigualable.
             </li>
             <li>
               <IoMdArrowRoundForward />
-              Tecnología avanzada y versatilidad
+              Tecnología avanzada y versatilidad.
             </li>
             <li>
               <IoMdArrowRoundForward />
-              Calidad de impresión fotográfica
+              Calidad de impresión fotográfica.
             </li>
             <li>
               <IoMdArrowRoundForward />
-              Flexibilidad y adaptabilidad
+              Flexibilidad y adaptabilidad.
             </li>
           </ul>
           <div className="img__third__container">
