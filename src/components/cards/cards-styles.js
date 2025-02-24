@@ -177,7 +177,7 @@ export const CardContainer = styled.div`
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     @media (max-width: 768px) {
-      gap: ${(props) => (props.$isDiji ? "0px" : "0px")};
+      gap: ${(props) => (props.$isDiji ? "10px" : "0px")};
       padding: ${(props) => (props.$isDiji ? "1rem" : "0px")};
     }
   }
