@@ -130,9 +130,10 @@ export const HacheDosInfo = styled.h2`
   font-size: 1.8rem;
   margin-bottom: 1rem;
   text-align: center;
+  font-weight: 1000;
 
   @media (max-width: 768px) {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 `;
 
