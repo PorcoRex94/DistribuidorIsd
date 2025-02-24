@@ -7,7 +7,7 @@ export const SearchContainer = styled.div`
   align-items: center;
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 50%;
+  width: 60%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: var(--gris);
 
@@ -28,22 +28,39 @@ export const SearchContainer = styled.div`
 
   input::placeholder {
     color: black;
-    padding-left: 8rem;
+    padding-left: 11rem;
   }
 
-  @media (max-width: 600px) {
-    width: 35%;
-
+  @media (max-width: 1200px) {
     input::placeholder {
-      padding-left: 5rem;
+      padding-left: 9rem;
     }
   }
 
-  @media (max-width: 410px) {
-    width: 30%;
-
+  @media (max-width: 1024px) {
     input::placeholder {
-      padding-left: 4rem;
+      padding-left: 8rem;
+    }
+  }
+
+  @media (max-width: 960px) {
+    width: 85%;
+    input::placeholder {
+      padding-left: 9.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    input::placeholder {
+      padding-left: 5.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    input::placeholder {
+      padding-left: 3rem;
     }
   }
 `;

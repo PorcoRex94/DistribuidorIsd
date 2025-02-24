@@ -10,4 +10,8 @@ export const CardsContainer = styled.div`
     justify-content: center;
     gap: 30px;
   }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 0;
+  }
 `;

@@ -90,4 +90,20 @@ export const FilterContainer = styled.div`
   @media (min-width: 1024px) and (max-width: 1200px) {
     width: 1024px;
   }
+
+  @media (min-width: 960px) and (max-width: 1024px) {
+    width: 960px;
+  }
+
+  @media (min-width: 768px) and (max-width: 960px) {
+    width: 768px;
+  }
+
+  @media (min-width: 480px) and (max-width: 768px) {
+    width: 480px;
+  }
+
+  @media (min-width: 360px) and (max-width: 480px) {
+    width: 360px;
+  }
 `;
