@@ -54,9 +54,17 @@ export const Navbar = () => {
     const menuIsOpen = navRef.current.classList.contains("show-menu");
 
     if (!menuIsOpen) {
-      document.body.classList.add("no-scroll");
+      // Guarda la posición actual antes de fijar
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
     } else {
-      document.body.classList.remove("no-scroll");
+      // Recupera la posición al cerrar el menú
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
 
     navRef.current.classList.toggle("show-menu");
