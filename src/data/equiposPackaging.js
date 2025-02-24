@@ -4,7 +4,7 @@ export const equiposPackaging = [
     marca: "DIJI",
     nombre: "SERIE PW",
     categoria: "Impresión One Pass",
-    descripcion: "¡Lo último en tecnología de impresión digital!",
+    descripcion: "Lo último en tecnología de impresión digital.",
     imagen: "../../assets/imgs/img/diji-impresoras-packaging-industrial.png",
     logo: "../../assets/imgs/logos/logo-diji-original.png",
     isDiji: true,
@@ -15,6 +15,74 @@ export const equiposPackaging = [
   },
   {
     id: 2,
+    marca: "DIJI",
+    nombre: "Serie EP-UV",
+    categoria: "Impresión UV single pass",
+    descripcion: "¡Impresión UV de Alta Productividad y Precisión!",
+    imagen: "../../assets/img-packaging/diji-serie-ep-uv.png",
+    logo: "../../assets/imgs/logos/logo-diji-original.png",
+    video: "https://www.youtube.com/embed/PD8ag9_vIXU?si=SCZowc5aoXAGYEyJ",
+    pdf: "../../assets/pdfs/DIJI-Serie-EP-UV-28-01-2025.pdf",
+    textoHacheDosUno: "Funciones Principales",
+    textoHacheDosDos: "¿Por Qué Elegir la Serie DIJI EP-UV?",
+    isDiji: false,
+    detalles:
+      "-Alta Productividad.\n-Personalización Sin Límites.\n-Versatilidad en Materiales.\n-Bajo Costo de Producción.\n-Calidad Superior y Resistencia.",
+    textosAdicionales: [
+      {
+        titulo:
+          "La Serie DIJI EP-UV ofrece impresión UV single pass de alta velocidad y calidad en múltiples materiales",
+        contenido:
+          "La Serie DIJI EP-UV es una línea de impresoras UV de última generación diseñadas para maximizar la eficiencia y la calidad en la impresión digital sobre una amplia gama de sustratos. Gracias a su tecnología single pass, estas impresoras permiten imprimir directamente sobre materiales plásticos, cartón, acrílico, madera, vidrio, cerámica y más, sin necesidad de pretratamiento ni planchas de impresión.\n\n Con un sistema de control PLC patentado, cabezales Epson S3200 U3 y una cinta transportadora con corrección automática de alta precisión, la Serie EP-UV garantiza una impresión estable, de alta resolución y con un flujo de trabajo automatizado. Además, su capacidad para imprimir datos variables y múltiples tareas en simultáneo la convierte en una solución ideal para producciones masivas con personalización avanzada.",
+      },
+    ],
+    funcionesClaves: [
+      "<strong>Sistema de Impresión Single Pass:</strong> Ofrece velocidades de hasta 50 m/min, optimizando la producción sin comprometer la calidad.",
+      "<strong>Resolución de Alta Definición:</strong> Imprime con calidad fotográfica hasta 600x1200 dpi, asegurando detalles precisos y colores vibrantes.",
+      "<strong>Tintas UV de Secado Instantáneo:</strong> Compatible con tintas Cyan, Magenta, Amarillo, Negro y Blanco, proporcionando acabados duraderos y resistentes a la abrasión.",
+      "<strong>Cabezal Epson S3200 U3 con Tecnología de Gotas Variables:</strong> Brinda 4 niveles de escala de grises para una impresión más nítida y detallada.",
+      "<strong>Sistema de Alimentación de Material Automático:</strong> Opción de alimentador automático para agilizar la producción y mejorar la precisión del posicionamiento.",
+      "<strong>Corrección Automática de Desvío:</strong> La cinta transportadora patentada mantiene la estabilidad del material, asegurando cortes perfectos y alineación precisa.",
+      "<strong>Soporte para Materiales Rígidos y Flexibles:</strong> Capaz de imprimir en una amplia variedad de sustratos, incluyendo PVC, papel ilustración, tablero alveolar, madera, vidrio y cerámica.",
+      "<strong>Impresión de Datos Variables:</strong> Perfecto para personalización masiva, permitiendo imprimir códigos QR, seriales y gráficos únicos en cada unidad sin interrupción.",
+      "<strong>Bajo Costo Operativo:</strong> La impresora no requiere la creación de planchas, reduciendo costos y tiempos de preparación en cada tirada.",
+      "<strong>Diseño Modular y Expansible:</strong> Permite añadir más cabezales de impresión para ampliar la velocidad y el ancho de impresión según las necesidades.",
+    ],
+    funcionesDestacadas: [
+      "<strong>Alta Productividad:</strong> Impresión single pass con capacidad de imprimir múltiples tareas sin interrupciones.",
+      "<strong>Personalización Sin Límites:</strong> Compatible con impresión de datos variables, ideal para productos personalizados, packaging y etiquetas únicas.",
+      "<strong>Versatilidad en Materiales:</strong> Imprime en una gran variedad de superficies, tanto rígidas como flexibles, abriendo un abanico de oportunidades comerciales.",
+      "<strong>Bajo Costo de Producción:</strong> Sin necesidad de planchas y con un sistema de suministro de tinta automatizado, reduce desperdicios y costos operativos.",
+      "<strong>Calidad Superior y Resistencia:</strong> Tintas UV con acabado duradero, ideales para aplicaciones en publicidad, empaques, decoración y etiquetas resistentes.",
+    ],
+    textosAdicionalesDos: [
+      {
+        titulo: "¡Llevá tu Negocio al Siguiente Nivel con la Tecnología DIJI!",
+        contenido:
+          "Si buscás una impresora UV rápida, precisa y con tecnología avanzada, la Serie DIJI EP-UV es la mejor opción. Diseñada para optimizar la producción masiva sin comprometer la calidad, esta impresora impulsa la rentabilidad y amplía las posibilidades de personalización.\n\n ¡Escribinos para solicitar más información!",
+      },
+    ],
+    especificaciones: [
+      {
+        titulo: "EP-120UV / EP-230UV / EP-345UV",
+        valor: "Hasta 345 mm | 50 m/min (600x300 dpi) | 600x1200 dpi",
+      },
+      {
+        titulo: "EP-460UV / EP-575UV",
+        valor: "Hasta 575 mm | 35 m/min (600x600 dpi) | 600x1200 dpi",
+      },
+      {
+        titulo: "EP-690UV / EP-805UV",
+        valor: "Hasta 805 mm | 15 m/min (600x1200 dpi) | 600x1200 dpi",
+      },
+      {
+        titulo: "EP-920UV / EP-1035UV / EP-1150UV",
+        valor: "Hasta 1150 mm | 15 m/min (600x1200 dpi) | 600x1200 dpi",
+      },
+    ],
+  },
+  {
+    id: 3,
     marca: "iECHO",
     nombre: "BK4",
     categoria: "Mesa de corte",
@@ -73,7 +141,7 @@ export const equiposPackaging = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     marca: "Saga",
     nombre: "SG-ASF420",
     categoria: "Corte",
@@ -145,7 +213,7 @@ export const equiposPackaging = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     marca: "iECHO",
     nombre: "Serie TK4S",
     categoria: "Mesa de corte",
@@ -202,7 +270,7 @@ export const equiposPackaging = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     marca: "iECHO",
     nombre: "Serie BK3",
     categoria: "Mesa de corte",
@@ -258,7 +326,7 @@ export const equiposPackaging = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     marca: "iECHO",
     nombre: "PK-1209 PRO",
     categoria: "Mesa de corte",
@@ -314,7 +382,7 @@ export const equiposPackaging = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     marca: "iECHO",
     nombre: "PK-0604 | PK-0705",
     categoria: "Mesa de corte",
@@ -370,7 +438,7 @@ export const equiposPackaging = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     marca: "Flora",
     nombre: "C25h Pro",
     categoria: "Plotter de impresión industrial",

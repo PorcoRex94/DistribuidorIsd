@@ -34,8 +34,6 @@ import { equiposEtiquetas } from "../../data/equiposEtiquetas";
 
 export const DetalleEquipo = ({ rubro }) => {
   const { id } = useParams();
-  console.log("🚀 Rubro:", rubro);
-  console.log("🚀 ID:", id);
 
   // 🔹 Detectar qué array usar según el rubro
   const dataMap = {
@@ -88,11 +86,20 @@ export const DetalleEquipo = ({ rubro }) => {
           <ContainerInfo>
             <HacheDosInfo>{equipo.textoHacheDosUno}</HacheDosInfo>
             <ul>
-              {equipo.funcionesClaves.map((funcion, index) => (
-                <ContainerLi key={index}>
-                  <InfoP dangerouslySetInnerHTML={{ __html: funcion }} />
-                </ContainerLi>
-              ))}
+              {equipo.funcionesClaves.map((funcion, index) => {
+                const formattedFunction = funcion.replace(
+                  /(.*?):/,
+                  "<strong>$1:</strong>"
+                );
+
+                return (
+                  <ContainerLi key={index}>
+                    <InfoP
+                      dangerouslySetInnerHTML={{ __html: formattedFunction }}
+                    />
+                  </ContainerLi>
+                );
+              })}
             </ul>
           </ContainerInfo>
         )}
@@ -131,22 +138,11 @@ export const DetalleEquipo = ({ rubro }) => {
         {/* Especificaciones técnicas */}
         {equipo.especificaciones && (
           <ContainerVideoEspecif>
-            <ContainerUlEspecif>
-              <HacheDosInfo>Especificaciones Técnicas</HacheDosInfo>
-              {equipo.especificaciones.map((spec, index) => (
-                <ContainerLiEspecif key={index}>
-                  <TbPointFilled />
-                  <strong className="strong">{spec.titulo}</strong>:{" "}
-                  {spec.valor}
-                </ContainerLiEspecif>
-              ))}
-            </ContainerUlEspecif>
             {/* Video */}
             {equipo.video && (
               <ContainerVideo style={{ marginTop: "20px" }}>
                 <iframe
                   width="100%"
-                  height="315"
                   src={equipo.video}
                   title={equipo.nombre}
                   frameBorder="0"
@@ -155,6 +151,18 @@ export const DetalleEquipo = ({ rubro }) => {
                 ></iframe>
               </ContainerVideo>
             )}
+            <ContainerUlEspecif>
+              <HacheDosInfo>Especificaciones Técnicas</HacheDosInfo>
+              {equipo.especificaciones.map((spec, index) => (
+                <ContainerLiEspecif key={index}>
+                  <strong className="strong">
+                    <TbPointFilled />
+                    {spec.titulo}:
+                  </strong>
+                  {spec.valor}
+                </ContainerLiEspecif>
+              ))}
+            </ContainerUlEspecif>
           </ContainerVideoEspecif>
         )}
 

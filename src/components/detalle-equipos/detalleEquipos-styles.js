@@ -8,14 +8,12 @@ export const ImgHUnoContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
-`;
 
-export const ContainerImgs = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
+  @media (max-width: 960px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const ContainerHache = styled.div`
@@ -32,16 +30,43 @@ export const ContainerHache = styled.div`
     color: var(--amarilloClaro);
     text-align: center;
   }
+
+  @media (max-width: 1024px) {
+    h1,
+    h2 {
+      padding: 0 1rem 0 1rem;
+    }
+  }
+
+  @media (max-width: 960px) {
+    width: 100%;
+    padding: 1rem;
+  }
+`;
+
+export const ContainerImgs = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
 `;
 
 export const ImgLogo = styled.img`
   width: 18%;
   height: auto;
+  @media (max-width: 960px) {
+    width: 30%;
+  }
 `;
 
 export const ImgEquipo = styled.img`
   width: 50%;
   height: auto;
+
+  @media (max-width: 960px) {
+    width: 60%;
+  }
 `;
 
 export const DetallesContainer = styled.div`
@@ -65,6 +90,10 @@ export const TextoAdicionalContainer = styled.div`
 export const TituloTextoAdicional = styled.h2`
   color: var(--amarillo);
   font-size: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 export const ContenidoTextoAdicional = styled.p`
@@ -80,6 +109,13 @@ export const ContainerInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 960px) {
+    strong {
+      display: block;
+    }
+    text-align: center;
+  }
 `;
 
 export const HacheDosInfo = styled.h2`
@@ -87,6 +123,10 @@ export const HacheDosInfo = styled.h2`
   font-size: 1.8rem;
   margin-bottom: 1rem;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const ContainerLi = styled.li`
@@ -96,6 +136,18 @@ export const ContainerLi = styled.li`
   border-radius: 8px;
   background-color: rgb(235, 235, 235);
   width: 95%;
+  font-size: 1.1rem;
+  font-weight: 450;
+`;
+
+export const InfoP = styled.p`
+  line-height: 1.4;
+  color: var(--azul);
+
+  strong {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
 `;
 
 export const ContainerUlEspecif = styled.ul`
@@ -110,29 +162,44 @@ export const ContainerLiEspecif = styled.li`
   width: 100%;
   padding: 1rem;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
+
+  .strong {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 export const ContainerVideoEspecif = styled.div`
   width: 100%;
   padding: 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 25px;
+
+  @media (max-width: 768px) {
+    border: 2px solid red;
+    gap: 145px;
+  }
 `;
 
 export const ContainerVideo = styled.div`
-  width: 40%;
-`;
+  width: 85%;
+  height: 400px;
 
-export const InfoP = styled.p`
-  line-height: 1.4;
-  color: var(--azul);
-
-  strong {
-    font-size: 1.2rem;
+  @media (max-width: 768px) {
+    border: 2px solid red;
+    width: 95%;
+    height: 300px;
   }
 `;
 
