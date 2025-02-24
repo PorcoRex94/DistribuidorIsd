@@ -195,19 +195,14 @@ export const ContainerVideoEspecif = styled.div`
   gap: 25px;
 
   @media (max-width: 768px) {
-    border: 2px solid red;
-    gap: 145px;
   }
 `;
 
 export const ContainerVideo = styled.div`
   width: 85%;
-  height: 400px;
 
   @media (max-width: 768px) {
-    border: 2px solid red;
-    width: 95%;
-    height: 300px;
+    width: 100%;
   }
 `;
 

@@ -143,6 +143,7 @@ export const DetalleEquipo = ({ rubro }) => {
               <ContainerVideo style={{ marginTop: "20px" }}>
                 <iframe
                   width="100%"
+                  height="400px"
                   src={equipo.video}
                   title={equipo.nombre}
                   frameBorder="0"
