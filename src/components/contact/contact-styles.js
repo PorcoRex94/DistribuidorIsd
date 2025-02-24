@@ -12,6 +12,10 @@ export const ContainerContact = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 1300px;
+
+  @media (max-width: 1050px) {
+    flex-direction: column;
+  }
 `;
 
 export const ContainerContactContent = styled.div`
@@ -44,6 +48,14 @@ export const ContainerContactContent = styled.div`
 
   .contact__p {
     text-align: center;
+  }
+
+  @media (max-width: 1200px) {
+    width: 50%;
+  }
+
+  @media (max-width: 1050px) {
+    height: 275px;
   }
 `;
 
@@ -84,6 +96,25 @@ export const ContactForm = styled.form`
   .btn:hover {
     transform: scale(1.1);
     background-color: #00796b;
+  }
+
+  @media (max-width: 1200px) {
+    width: 50%;
+  }
+
+  @media (max-width: 1050px) {
+    padding-top: 1rem;
+  }
+
+  @media (max-width: 360px) {
+    .textArea {
+      width: 340px;
+    }
+
+    p {
+      width: 345px;
+      text-align: center;
+    }
   }
 `;
 

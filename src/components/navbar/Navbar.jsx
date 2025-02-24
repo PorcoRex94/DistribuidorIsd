@@ -18,11 +18,12 @@ export const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.hash && document.getElementById(location.hash.substring(1))) {
+    if (!location.hash) return;
+
+    const targetElement = document.getElementById(location.hash.substring(1));
+    if (targetElement) {
       setTimeout(() => {
-        document
-          .getElementById(location.hash.substring(1))
-          ?.scrollIntoView({ behavior: "smooth" });
+        targetElement.scrollIntoView({ behavior: "smooth" });
 
         // Borra el hash de la URL sin recargar la página
         window.history.replaceState(null, null, " ");
@@ -53,20 +54,11 @@ export const Navbar = () => {
     const menuIsOpen = navRef.current.classList.contains("show-menu");
 
     if (!menuIsOpen) {
-      // Guarda la posición actual del scroll antes de bloquear
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.position = "fixed";
-      document.body.style.width = "100%";
+      document.body.classList.add("no-scroll");
     } else {
-      // Restaura la posición del scroll y desbloquea
-      const scrollY = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      document.body.classList.remove("no-scroll");
     }
 
-    // Alterna clases del menú
     navRef.current.classList.toggle("show-menu");
     toggleRef.current.classList.toggle("show-icon");
   };
@@ -87,12 +79,14 @@ export const Navbar = () => {
       navRef.current.classList.remove("show-menu");
       toggleRef.current.classList.remove("show-icon");
 
-      // Restaura el scroll
-      const scrollY = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      // Restaurar scroll solo si estaba bloqueado
+      if (document.body.style.position === "fixed") {
+        const scrollY = parseInt(document.body.dataset.scrollY || "0", 10);
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        window.scrollTo(0, scrollY);
+      }
     }
   };
 

@@ -50,6 +50,11 @@ export const HeaderContainer = styled.header`
     gap: 2rem;
   }
 
+  .no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+
   @media (min-width: 1245px) and (max-width: 1412px) {
     .nav__menu {
       width: 40%;

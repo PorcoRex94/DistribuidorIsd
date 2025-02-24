@@ -18,8 +18,9 @@ export const SectionContainer = styled.section`
     .nosotros__container {
       gap: 20px;
     }
+  }
 
-    @media (max-width: 500px) {
+  @media (max-width: 500px) {
     .nosotros__container {
       gap: 10px;
     }
@@ -42,13 +43,15 @@ export const SectionContainer = styled.section`
 `;
 
 export const HacheDos = styled.h2`
+  width: 100%;
+  max-width: calc(100vw - var(--scrollbar-width));
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 1rem;
   background-color: var(--verdeOscuro);
   color: var(--amarillo);
-  width: 100vw;
-  height: 50px;
 `;
 
 export const ImgContainer = styled.img`
@@ -68,6 +71,11 @@ export const LogoContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 50px;
+
+  @media (max-width: 1024px) {
+    border: 10px solid red;
+    gap: 15px;
+  }
 `;
 
 export const ImgFloraContainer = styled.div`
@@ -99,6 +107,21 @@ export const ImgFloraContainer = styled.div`
 
   .hache__dos__flora {
     font-size: 3rem;
+    padding: 1rem;
     color: var(--amarillo);
+  }
+
+  @media (max-width: 960px) {
+    .hache__dos__flora {
+      font-size: 2rem;
+      text-align: center;
+    }
+    background-attachment: scroll;
+  }
+
+  @media (max-width: 500px) {
+    .hache__dos__flora {
+      font-size: 1.5rem;
+    }
   }
 `;

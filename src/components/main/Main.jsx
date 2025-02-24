@@ -8,6 +8,7 @@ import {
   SectionContainer,
 } from "./main-styles";
 import { Hero } from "../hero/Hero";
+import { LogoSlider } from "../logo-slider/LogoSlider";
 
 export const Main = () => {
   // Referencias para los contenedores de logos
@@ -35,6 +36,25 @@ export const Main = () => {
 
     return () => clearInterval(intervalId); // Limpieza al desmontar el componente
   }, []);
+
+  const logosFila1 = [
+    "/assets/imgs/logos/logo-allwin-original.png",
+    "/assets/imgs/logos/logo-saga-original.png",
+    "/assets/imgs/logos/logo-diji-original.png",
+    "/assets/imgs/logos/logo-flora-original.png",
+    "/assets/imgs/logos/logo-gweike-original.png",
+    "/assets/imgs/logos/logo-hd-digital-original.png",
+  ];
+
+  const logosFila2 = [
+    "/assets/imgs/logos/logo-iecho-original.png",
+    "/assets/imgs/logos/logo-industrial-inkjet-original.png",
+    "/assets/imgs/logos/logo-mimaki-original.png",
+    "/assets/imgs/logos/logo-unikonex-original.png",
+    "/assets/imgs/logos/logo-apex-original.png",
+    "/assets/imgs/logos/logo-fayon-original.png",
+    "/assets/imgs/logos/logo-pengda-original.png",
+  ];
 
   return (
     <main className="main">
@@ -92,61 +112,13 @@ export const Main = () => {
       <section>
         <HacheDos>Algunas Marcas Que Distribuimos</HacheDos>
         <MarcasContainer className="marcas__container">
-          <LogoContainer
-            ref={(el) => (logoContainersRef.current[0] = el)} // Asignamos la referencia del primer contenedor
-            className="logo__container"
-          >
-            <ImgContainer
-              src="/assets/imgs/logos/logo-allwin-original.png"
-              alt="Logo allwin"
-            />
-            <ImgContainer
-              src="/assets/imgs/logos/logo-apex-original.png"
-              alt="Logo apex"
-            />
-            <ImgContainer
-              src="/assets/imgs/logos/logo-diji-original.png"
-              alt="Logo diji"
-            />
-            <ImgContainer
-              src="/assets/imgs/logos/logo-flora-original.png"
-              alt="Logo flora"
-            />
-            <ImgContainer
-              src="/assets/imgs/logos/logo-gweike-original.png"
-              alt="Logo gweike"
-            />
-          </LogoContainer>
+          <LogoSlider logos={logosFila1} />
           <ImgFloraContainer className="img__flora__container">
             <div className="img__flora">
               <h2 className="hache__dos__flora">Revolucionando el mercado</h2>
             </div>
           </ImgFloraContainer>
-          <LogoContainer
-            ref={(el) => (logoContainersRef.current[1] = el)} // Asignamos la referencia del segundo contenedor
-            className="logo__container"
-          >
-            <ImgContainer
-              src="/assets/imgs/logos/logo-hd-digital-original.png"
-              alt="Logo hd digital"
-            />
-            <ImgContainer
-              src="/assets/imgs/logos/logo-iecho-original.png"
-              alt="Logo iecho"
-            />
-            <ImgContainer
-              src="/assets/imgs/logos/logo-industrial-inkjet-original.png"
-              alt="Logo industrial inkjet"
-            />
-            <ImgContainer
-              src="/assets/imgs/logos/logo-mimaki-original.png"
-              alt="Logo mimaki"
-            />
-            <ImgContainer
-              src="/assets/imgs/logos/logo-unikonex-original.png"
-              alt="Logo unikonex"
-            />
-          </LogoContainer>
+          <LogoSlider logos={logosFila2} />
         </MarcasContainer>
       </section>
     </main>
