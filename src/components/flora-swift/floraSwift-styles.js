@@ -34,6 +34,7 @@ export const FirstContainerFS = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 10px;
     font-size: 1.5rem;
     color: var(--azul);
@@ -348,6 +349,7 @@ export const FourthContainer = styled.section`
   }
 
   h4 {
+    text-align: center;
     font-size: 1.3rem;
   }
 `;
@@ -358,6 +360,10 @@ export const FirstContainerDiferencia = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export const FirstContainerDiferenciaInfo = styled.div`
