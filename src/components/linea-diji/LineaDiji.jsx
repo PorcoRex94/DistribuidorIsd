@@ -40,7 +40,6 @@ export const LineaDiji = ({ heroImage, title }) => {
   };
 
   const handleButtonClick = (id) => {
-    console.log(`🛠️ Navegando a: /linea-diji/${id}`);
     navigate(`/linea-diji/${id}`);
   };
 
@@ -68,18 +67,6 @@ export const LineaDiji = ({ heroImage, title }) => {
           <ul>
             <li>
               <IoMdArrowRoundForward />
-              Tecnología avanzada y versatilidad
-            </li>
-            <li>
-              <IoMdArrowRoundForward />
-              Calidad de impresión fotográfica
-            </li>
-            <li>
-              <IoMdArrowRoundForward />
-              Velocidad de impresión inigualable
-            </li>
-            <li>
-              <IoMdArrowRoundForward />
               Máxima productividad, simplicidad y versatilidad
             </li>
             <li>
@@ -92,14 +79,28 @@ export const LineaDiji = ({ heroImage, title }) => {
             </li>
             <li>
               <IoMdArrowRoundForward />
+              Velocidad de impresión inigualable
+            </li>
+            <li>
+              <IoMdArrowRoundForward />
+              Tecnología avanzada y versatilidad
+            </li>
+            <li>
+              <IoMdArrowRoundForward />
+              Calidad de impresión fotográfica
+            </li>
+            <li>
+              <IoMdArrowRoundForward />
               Flexibilidad y adaptabilidad
             </li>
           </ul>
-          <img
-            src="../../assets/imgs/img/diji-impresoras-packaging-industrial.png"
-            alt="Máquina Diji"
-            className="img__third"
-          />
+          <div className="img__third__container">
+            <img
+              src="../../assets/imgs/img/diji-impresoras-packaging-industrial.png"
+              alt="Máquina Diji"
+              className="img__third"
+            />
+          </div>
         </ThirdContainer>
         <FourthContainer>
           <h3>
@@ -114,10 +115,8 @@ export const LineaDiji = ({ heroImage, title }) => {
             />
             <div>
               <h5>Tecnología confiable</h5>
-              <p>
-                Cabezales de impresión HP® PageWide® Single Pass A3. La
-                tecnología de impresión más productiva del mercado.
-              </p>
+              <p>Cabezales de impresión HP® PageWide® Single Pass A3.</p>
+              <p>La tecnología de impresión más productiva del mercado.</p>
             </div>
           </HpContainer>
         </FourthContainer>

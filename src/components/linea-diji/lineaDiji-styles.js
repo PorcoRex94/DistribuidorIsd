@@ -20,6 +20,18 @@ export const FirstContainer = styled.section`
   justify-content: center;
   align-items: center;
   gap: 25px;
+
+  @media (max-width: 1024px) {
+    width: 95%;
+  }
+
+  @media (max-width: 960px) {
+    gap: 35px;
+  }
+
+  @media (max-width: 750px) {
+    gap: 15px;
+  }
 `;
 
 export const SecondContainer = styled.div`
@@ -29,6 +41,10 @@ export const SecondContainer = styled.div`
   justify-content: center;
   gap: 10px;
   width: 85%;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 export const SecondInfo = styled.div`
@@ -44,6 +60,7 @@ export const SecondInfo = styled.div`
     font-size: 1.4rem;
     color: #1d3557;
     font-weight: 900;
+    text-align: center;
   }
 
   .second__p {
@@ -58,14 +75,15 @@ export const ThirdContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem;
-  justify-content: space-around;
   width: 100%;
-  height: 350px;
+  height: auto;
+  gap: 75px;
 
   ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 80%;
   }
 
   li {
@@ -74,13 +92,32 @@ export const ThirdContainer = styled.div`
   }
 
   .img__third {
-    width: 50%;
-    height: 90%;
+    width: 100%;
+    height: 300px;
+  }
+
+  .img__third__container {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+  }
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    ul {
+      order: 2;
+    }
+    .img__third {
+      width: 90%;
+    }
   }
 `;
 
 export const FourthContainer = styled.div`
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,6 +139,15 @@ export const HpContainer = styled.div`
   h5 {
     font-size: 1.1rem;
   }
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const ContainerVideo = styled.section`
@@ -112,6 +158,18 @@ export const ContainerVideo = styled.section`
   justify-content: center;
   align-items: center;
   background-color: var(--verdeClaro);
+
+  @media (max-width: 1250px) {
+    iframe {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 960px) {
+    iframe {
+      width: 100%;
+    }
+  }
 `;
 
 export const HacheDosPContainer = styled.div`
@@ -120,12 +178,13 @@ export const HacheDosPContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   h2 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50px;
+    padding: 1rem;
     background-color: var(--verdeOscuro);
     color: var(--amarillo);
   }
