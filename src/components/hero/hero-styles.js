@@ -12,6 +12,14 @@ export const HeroContainer = styled.section`
   align-items: center;
   text-align: center;
 
+  @media (max-width: 960px) {
+    height: 50vh;
+  }
+
+  @media (max-width: 768px) {
+    height: 45vh;
+  }
+
   &::before {
     content: "";
     position: absolute;
