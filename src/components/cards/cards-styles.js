@@ -4,8 +4,12 @@ export const CardContainer = styled.div`
   perspective: ${(props) => (props.$isDiji ? "3500px" : "1000px")};
   height: ${(props) => (props.$isDiji ? "450px" : "540px")};
   min-width: ${(props) => (props.$isDiji ? "82.5vw" : "295px")};
-
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    height: ${(props) => (props.$isDiji ? "635px" : "605px")};
+    min-width: ${(props) => (props.$isDiji ? "92.5vw" : "92.5vw")};
+  }
 
   .card-inner {
     position: relative;
@@ -18,6 +22,15 @@ export const CardContainer = styled.div`
 
   &.flipped .card-inner {
     transform: rotateY(-180deg);
+  }
+
+  @media (max-width: 960px) {
+    .card-inner {
+      transform: none;
+    }
+    &.flipped .card-inner {
+      transform: none;
+    }
   }
 
   .card-front,
@@ -38,6 +51,10 @@ export const CardContainer = styled.div`
     flex-direction: ${(props) => (props.$isDiji ? "none" : "column")};
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+      flex-direction: ${(props) => (props.$isDiji ? "column" : "column")};
+    }
   }
 
   .card-back {
@@ -53,11 +70,11 @@ export const CardContainer = styled.div`
     align-items: center;
     height: ${(props) => (props.$isDiji ? "100%" : "50%")};
     width: ${(props) => (props.$isDiji ? "70%" : "100%")};
-  }
 
-  .logo__container {
-    width: 100%;
-    height: 15%;
+    @media (max-width: 768px) {
+      width: ${(props) => (props.$isDiji ? "100%" : "100%")};
+      height: ${(props) => (props.$isDiji ? "45%" : "60%")};
+    }
   }
 
   .img__container {
@@ -78,11 +95,21 @@ export const CardContainer = styled.div`
     width: ${(props) => (props.$isDiji ? "85%" : "200px")};
     height: ${(props) => (props.$isDiji ? "90%" : "150px")};
     margin: 5px 0;
+
+    @media (max-width: 768px) {
+      width: ${(props) => (props.$isDiji ? "100%" : "75%")};
+      height: ${(props) => (props.$isDiji ? "100%" : "68%")};
+    }
   }
 
   .card-logo {
-    max-width: ${(props) => (props.$isDiji ? "100%" : "50%")};
-    max-height: ${(props) => (props.$isDiji ? "100%" : "50%")};
+    width: ${(props) => (props.$isDiji ? "100%" : "50%")};
+    height: ${(props) => (props.$isDiji ? "100%" : "50%")};
+
+    @media (max-width: 768px) {
+      width: ${(props) => (props.$isDiji ? "100%" : "30.5%")};
+      height: ${(props) => (props.$isDiji ? "100%" : "30.5%")};
+    }
   }
 
   .text__container {
@@ -97,6 +124,11 @@ export const CardContainer = styled.div`
     border-radius: 5px;
     border-bottom-left-radius: ${(props) => (props.$isDiji ? "0px" : "")};
     border-top-left-radius: ${(props) => (props.$isDiji ? "0px" : "")};
+
+    @media (max-width: 768px) {
+      width: ${(props) => (props.$isDiji ? "100%" : "100%")};
+      padding: ${(props) => (props.$isDiji ? "0 0 1rem 0" : "0")};
+    }
   }
 
   .card__info {
@@ -121,7 +153,7 @@ export const CardContainer = styled.div`
     width: 100%;
     background-color: var(--verdeOscuro);
     color: var(--amarillo);
-    height: 35px;
+    padding: ${(props) => (props.$isDiji ? "0.1rem" : "0.7rem")};
   }
 
   .hache__tres {
@@ -144,6 +176,10 @@ export const CardContainer = styled.div`
     background-color: rgb(28, 119, 104);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+    @media (max-width: 768px) {
+      gap: ${(props) => (props.$isDiji ? "0px" : "0px")};
+      padding: ${(props) => (props.$isDiji ? "1rem" : "0px")};
+    }
   }
 
   .p__description {
@@ -155,6 +191,10 @@ export const CardContainer = styled.div`
     color: var(--amarillo);
     font-size: ${(props) => (props.$isDiji ? "1.2rem" : "1rem")};
     font-weight: 650;
+
+    @media (max-width: 768px) {
+      font-size: ${(props) => (props.$isDiji ? "1rem" : "1rem")};
+    }
   }
 
   .p__detalles {

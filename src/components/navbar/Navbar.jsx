@@ -15,6 +15,7 @@ export const Navbar = () => {
   const toggleRef = useRef(null);
   const navRef = useRef(null);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -83,18 +84,18 @@ export const Navbar = () => {
   };
 
   const closeMenu = () => {
-    if (window.innerWidth <= 960) {
-      navRef.current.classList.remove("show-menu");
-      toggleRef.current.classList.remove("show-icon");
+    console.log("Cerrando menú...");
+    setIsOpen(false);
+    document.body.style.position = "unset";
 
-      // Restaurar scroll solo si estaba bloqueado
-      if (document.body.style.position === "fixed") {
-        const scrollY = parseInt(document.body.dataset.scrollY || "0", 10);
-        document.body.style.position = "";
-        document.body.style.top = "";
-        document.body.style.width = "";
-        window.scrollTo(0, scrollY);
-      }
+    // Asegurar que el menú se cierra correctamente
+    if (navRef.current) {
+      navRef.current.classList.remove("show-menu");
+    }
+
+    // También aseguramos que el ícono vuelve a su estado inicial
+    if (toggleRef.current) {
+      toggleRef.current.classList.remove("show-icon");
     }
   };
 
@@ -123,12 +124,26 @@ export const Navbar = () => {
         <div className="nav__menu" id="nav-menu" ref={navRef}>
           <ListContainer className="nav__list">
             <li>
-              <Link to="/" className="nav__link" onClick={toggleMenu}>
+              <Link
+                to="/"
+                className="nav__link"
+                onClick={() => {
+                  toggleMenu();
+                  closeMenu();
+                }}
+              >
                 Inicio
               </Link>
             </li>
             <li>
-              <Link to="/#nosotros" className="nav__link" onClick={toggleMenu}>
+              <Link
+                to="/#nosotros"
+                className="nav__link"
+                onClick={() => {
+                  toggleMenu();
+                  closeMenu();
+                }}
+              >
                 Nosotros
               </Link>
             </li>
@@ -210,7 +225,14 @@ export const Navbar = () => {
               </ul>
             </li>
             <li>
-              <Link to="/#contact" className="nav__link" onClick={toggleMenu}>
+              <Link
+                to="/#contact"
+                className="nav__link"
+                onClick={() => {
+                  toggleMenu();
+                  closeMenu();
+                }}
+              >
                 Contacto
               </Link>
             </li>
