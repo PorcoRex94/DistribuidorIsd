@@ -94,7 +94,7 @@ export const ThirdContainer = styled.div`
 
   li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .img__third {
