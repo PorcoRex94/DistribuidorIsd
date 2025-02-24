@@ -41,6 +41,7 @@ export const ContainerHache = styled.div`
   @media (max-width: 960px) {
     width: 100%;
     padding: 1rem;
+    gap: 15px;
   }
 `;
 
@@ -56,7 +57,7 @@ export const ImgLogo = styled.img`
   width: 18%;
   height: auto;
   @media (max-width: 960px) {
-    width: 30%;
+    width: 50%;
   }
 `;
 
@@ -65,7 +66,7 @@ export const ImgEquipo = styled.img`
   height: auto;
 
   @media (max-width: 960px) {
-    width: 60%;
+    width: 80%;
   }
 `;
 
