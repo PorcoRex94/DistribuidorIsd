@@ -11,7 +11,7 @@ export const ContainerContact = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1300px;
+  max-width: 1300px;
 
   @media (max-width: 1050px) {
     flex-direction: column;
