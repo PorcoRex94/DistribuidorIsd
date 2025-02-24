@@ -30,4 +30,20 @@ export const SearchContainer = styled.div`
     color: black;
     padding-left: 8rem;
   }
+
+  @media (max-width: 600px) {
+    width: 35%;
+
+    input::placeholder {
+      padding-left: 5rem;
+    }
+  }
+
+  @media (max-width: 410px) {
+    width: 30%;
+
+    input::placeholder {
+      padding-left: 4rem;
+    }
+  }
 `;
