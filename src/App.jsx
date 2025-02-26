@@ -106,7 +106,7 @@ function App() {
           />
 
           <Route
-            path="/linea-diji/*"
+            path="/linea-diji"
             element={
               <LineaDiji
                 title="Innova tu empresa con tecnología Inkjet 1 Pass"
@@ -116,7 +116,7 @@ function App() {
             }
           />
           <Route
-            path="/flora-swift/*"
+            path="/flora-swift"
             element={
               <FloraSwift
                 title="¡Imprimí el Futuro con la Rotativa Inkjet Digital Flora Swift440!"
@@ -125,7 +125,7 @@ function App() {
             }
           />
           <Route
-            path="/flora-phenix/*"
+            path="/flora-phenix"
             element={
               <FloraPhenix
                 title="¡Bienvenido al Futuro de la Impresión Editorial con la Flora Phenix440!"
@@ -134,7 +134,7 @@ function App() {
             }
           />
           <Route
-            path="/flora-j350/*"
+            path="/flora-j350"
             element={
               <FloraJTresCinco
                 title="¡LA REVOLUCIÓN DIGITAL PARA ETIQUETAS YA LLEGÓ!"

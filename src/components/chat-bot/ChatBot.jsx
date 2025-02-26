@@ -8,12 +8,16 @@ import {
   InputContainer,
   TextInput,
   SendButton,
+  ScrollToTopButton,
 } from "./chatBot-styles";
+import { FaArrowUp } from "react-icons/fa";
 
 export const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isBouncing, setIsBouncing] = useState(false);
+  const [isBouncingScroll, setIsBouncingScroll] = useState(false);
   const [message, setMessage] = useState("");
+  const [showScrollButton, setShowScrollButton] = useState(false);
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   useEffect(() => {
@@ -41,6 +45,21 @@ export const ChatBot = () => {
   const handleSendMessage = () => {
     const whatsappUrl = buildWhatsAppUrl(message);
     window.open(whatsappUrl, "_blank");
+  };
+
+  /*-----Botón Volver arriba--------- */
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollButton(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -75,6 +94,12 @@ export const ChatBot = () => {
           <SendButton onClick={handleSendMessage}>Enviar</SendButton>
         </InputContainer>
       </ChatPopup>
+
+      {showScrollButton && (
+        <ScrollToTopButton onClick={scrollToTop} aria-label="Volver arriba">
+          <FaArrowUp />
+        </ScrollToTopButton>
+      )}
     </ChatContainer>
   );
 };

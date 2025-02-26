@@ -114,3 +114,26 @@ export const CloseButton = styled.button`
   right: 10px;
   cursor: pointer;
 `;
+
+export const ScrollToTopButton = styled.button`
+  position: fixed;
+  bottom: 12%;
+  right: 2%;
+  width: 40px;
+  height: 40px;
+  background: var(--verdeClaro);
+  color: var(--amarillo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  border: 3px solid var(--amarillo);
+  transition: opacity 0.3s, transform 0.3s;
+
+  &:hover {
+    background-color: var(--verdeOscuro);
+    transform: scale(1.1);
+  }
+`;

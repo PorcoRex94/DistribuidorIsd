@@ -4,7 +4,9 @@ export const Footer = () => {
   return (
     <>
       <FooterContainer>
-        <p>Todos los derechos reservados - Ambraco</p>
+        <p>
+          Copyright © 2025 - Daniel Moras - Developed by <span>Ambraco</span>
+        </p>
       </FooterContainer>
     </>
   );
