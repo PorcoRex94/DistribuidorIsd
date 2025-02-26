@@ -119,6 +119,10 @@ export const ContainerHTPRubro = styled.div`
     background-color: var(--verdeClaro) !important;
     transform: scale(1.1);
   }
+
+  @media (max-width: 550px) {
+    padding: 0.7rem;
+  }
 `;
 
 export const MarcasContainer = styled.div`
