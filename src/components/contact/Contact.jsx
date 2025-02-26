@@ -78,7 +78,7 @@ export const Contact = () => {
                 alt="Logo email"
                 className="logo__contact"
               />
-              danielmoras069@gmail.com
+              daniel@danielmoras.com.ar
             </a>
           </div>
         </ContainerContactContent>

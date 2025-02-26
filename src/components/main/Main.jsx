@@ -1,9 +1,12 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import {
+  ContainerHTPRubro,
+  ContainerImgRubro,
+  ContainerInfoRubro,
+  GlobalContainerRubros,
   HacheDos,
-  ImgContainer,
   ImgFloraContainer,
-  LogoContainer,
   MarcasContainer,
   SectionContainer,
 } from "./main-styles";
@@ -109,6 +112,107 @@ export const Main = () => {
           </p>
         </div>
       </SectionContainer>
+      <section>
+        <HacheDos>Simplificá y Mejorá Tu Empresa</HacheDos>
+        <GlobalContainerRubros>
+          <ContainerInfoRubro>
+            <ContainerImgRubro>
+              <img
+                src="../assets/imgs/img/editorial-index.png"
+                alt="Rubro editorial"
+                className="img__rubro"
+              />
+            </ContainerImgRubro>
+            <ContainerHTPRubro>
+              <h3>INDUSTRIA EDITORIAL</h3>
+              <p>
+                La tecnología de impresión inkjet digital está revolucionando la
+                industria editorial. ¡Conocé nuestras soluciones!
+              </p>
+              <Link to="/editorial" className="link__equipos">
+                Ver Equipos
+              </Link>
+            </ContainerHTPRubro>
+          </ContainerInfoRubro>
+          <ContainerInfoRubro>
+            <ContainerHTPRubro>
+              <h3>INDUSTRIA DE ETIQUETAS</h3>
+              <p>
+                ¡Conocé la tecnología de impresión inkjet digital single-pass,
+                la más productiva y rentable del mercado actual!
+              </p>
+              <Link to="/etiquetas" className="link__equipos">
+                Ver Equipos
+              </Link>
+            </ContainerHTPRubro>
+            <ContainerImgRubro>
+              <img
+                src="../assets/imgs/img/etiquetas-index.png"
+                alt="Rubro editorial"
+                className="img__rubro__der"
+              />
+            </ContainerImgRubro>
+          </ContainerInfoRubro>
+          <ContainerInfoRubro>
+            <ContainerImgRubro>
+              <img
+                src="../assets/imgs/img/packaging-index.png"
+                alt="Rubro editorial"
+                className="img__rubro"
+              />
+            </ContainerImgRubro>
+            <ContainerHTPRubro>
+              <h3>INDUSTRIA DEL PACKAGING</h3>
+              <p>
+                Soluciones digitales para bajas, medianas y altas producciones.
+                ¡Automatizá, competí y expandí tu negocio!
+              </p>
+              <Link to="/packaging" className="link__equipos">
+                Ver Equipos
+              </Link>
+            </ContainerHTPRubro>
+          </ContainerInfoRubro>
+          <ContainerInfoRubro>
+            <ContainerHTPRubro>
+              <h3>INDUSTRIA TEXTIL</h3>
+              <p>
+                Lo último en tecnología textil para garantizarte la mayor
+                rentabilidad. ¡Menos mano de obra, menos costos de producción y
+                más productividad!
+              </p>
+              <Link to="/textil" className="link__equipos">
+                Ver Equipos
+              </Link>
+            </ContainerHTPRubro>
+            <ContainerImgRubro>
+              <img
+                src="../assets/imgs/img/textil-index.png"
+                alt="Rubro editorial"
+                className="img__rubro__der"
+              />
+            </ContainerImgRubro>
+          </ContainerInfoRubro>
+          <ContainerInfoRubro>
+            <ContainerImgRubro>
+              <img
+                src="../assets/imgs/img/cvisual-index.png"
+                alt="Rubro editorial"
+                className="img__rubro"
+              />
+            </ContainerImgRubro>
+            <ContainerHTPRubro>
+              <h3>COMUNICACIÓN VISUAL</h3>
+              <p>
+                Dale calidad a tus clientes de forma simple y veloz. ¡Encontrá
+                la solución adecuada para tu negocio!
+              </p>
+              <Link to="/comunicacionVisual" className="link__equipos">
+                Ver Equipos
+              </Link>
+            </ContainerHTPRubro>
+          </ContainerInfoRubro>
+        </GlobalContainerRubros>
+      </section>
       <section>
         <HacheDos>Algunas Marcas Que Distribuimos</HacheDos>
         <MarcasContainer className="marcas__container">

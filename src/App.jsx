@@ -17,6 +17,7 @@ import { FloraSwift } from "./components/flora-swift/FloraSwift";
 import { FloraPhenix } from "./components/flora-swift/FloraPhenix";
 import { equiposEtiquetas } from "./data/equiposEtiquetas";
 import { FloraJTresCinco } from "./components/flora-swift/FloraJTresCinco";
+import { ScrollToTop } from "./components/scroll-to-top/ScrollToTop";
 
 function App() {
   const setScrollbarWidth = () => {
@@ -43,6 +44,7 @@ function App() {
     <>
       <Router>
         <GlobalStyles />
+        <ScrollToTop />
         <Navbar />
         <ChatBot />
         <Routes>
