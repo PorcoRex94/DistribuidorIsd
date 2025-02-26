@@ -117,8 +117,8 @@ export const CloseButton = styled.button`
 
 export const ScrollToTopButton = styled.button`
   position: fixed;
-  bottom: 12%;
-  right: 2%;
+  bottom: 90px;
+  right: 30.5px;
   width: 40px;
   height: 40px;
   background: var(--verdeClaro);
