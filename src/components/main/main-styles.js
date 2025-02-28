@@ -148,7 +148,7 @@ export const ImgFloraContainer = styled.div`
   position: relative;
   height: 60vh;
   width: 100vw;
-  background: url("../assets/imgs/img/DSC_0520.jpg") no-repeat center
+  background: url("../assets/imgs/img/DSC_0520.webp") no-repeat center
     center/cover;
   background-attachment: fixed;
   display: flex;
