@@ -14,6 +14,7 @@ import {
   Main,
   ContainerHeroImages,
   CaracteristicasContainer,
+  InfoTextDos,
 } from "./tinSumos-styles.js";
 import { tintasInsumos } from "../../data/tintasInsumos";
 import { BsFire } from "react-icons/bs";
@@ -27,10 +28,10 @@ export const TinSumos = ({ insumos }) => {
     const encodedMessage = encodeURIComponent(message || "¡Hola!"); //
 
     if (isMobile) {
-      return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=¡Hola! Estoy interesado en más información sobre ${equipo.marca} ${equipo.nombre}`;
+      return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=¡Hola! Estoy interesado en más información sobre ${producto.marca} ${producto.nombre}`;
     } else {
       // Escritorio: usar WhatsApp Web
-      return `https://web.whatsapp.com/send?phone=${phoneNumber}&text=¡Hola! Estoy interesado en más información sobre ${equipo.marca} ${equipo.nombre}`;
+      return `https://web.whatsapp.com/send?phone=${phoneNumber}&text=¡Hola! Estoy interesado en más información sobre ${producto.marca} ${producto.nombre}`;
     }
   };
 
@@ -62,8 +63,9 @@ export const TinSumos = ({ insumos }) => {
         <HeroContent>
           <h1>{producto.nombre}</h1>
           <h2>{producto.descripcionTitulo}</h2>
-          <p>{producto.descripcion}</p>
+          <p>{producto.tagline}</p>
           <Button
+            className="first__button"
             href={buildWhatsAppUrl(producto.nombre)}
             target="_blank"
             rel="noopener noreferrer"
@@ -84,6 +86,17 @@ export const TinSumos = ({ insumos }) => {
           <p>{producto.descripcionDos}</p>
         </InfoText>
       </Info>
+
+      {!producto.opciones?.length && producto.informacionAdicional && (
+        <Info>
+          <InfoTextDos>
+            <h2>{producto.tituloInformacionAdicional}</h2>
+            <p style={{ whiteSpace: "pre-line" }}>
+              {producto.informacionAdicional}
+            </p>
+          </InfoTextDos>
+        </Info>
+      )}
 
       {/* Si tiene opciones, mostramos la tabla */}
       {producto.opciones?.length > 0 && (
@@ -132,7 +145,7 @@ export const TinSumos = ({ insumos }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Contactanos
+            Consultar
           </Button>
         </CTA>
       </CaracteristicasContainer>

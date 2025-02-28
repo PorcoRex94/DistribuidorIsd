@@ -42,8 +42,8 @@ export const HeroContent = styled.div`
     font-size: 1.2rem;
   }
 
-  button {
-    width: 25%;
+  .first__button {
+    width: 20%;
   }
 `;
 
@@ -70,6 +70,7 @@ export const HeroImage = styled.img`
 export const Info = styled.section`
   display: flex;
   align-items: center;
+  text-align: center;
   padding: 2rem;
   background: ${colors.blanco};
 `;
@@ -77,12 +78,33 @@ export const Info = styled.section`
 export const InfoText = styled.div`
   width: 100%;
   color: var(--azul);
+  text-align: left;
 
   h2 {
     width: 100%;
     font-size: 1.8rem;
     margin-bottom: 10px;
-    text-align: center;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    width: 75%;
+  }
+`;
+
+export const InfoTextDos = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: var(--azul);
+  text-align: right;
+
+  h2 {
+    width: 100%;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
   }
 
   p {
