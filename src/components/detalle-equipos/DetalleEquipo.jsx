@@ -34,6 +34,24 @@ import { equiposEtiquetas } from "../../data/equiposEtiquetas";
 
 export const DetalleEquipo = ({ rubro }) => {
   const { id } = useParams();
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  const buildWhatsAppUrl = (message) => {
+    const phoneNumber = "5491166722505"; // Número internacional
+    const encodedMessage = encodeURIComponent(message || "¡Hola!"); //
+
+    if (isMobile) {
+      return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=¡Hola! Estoy interesado en más información sobre ${equipo.marca} ${equipo.nombre}`;
+    } else {
+      // Escritorio: usar WhatsApp Web
+      return `https://web.whatsapp.com/send?phone=${phoneNumber}&text=¡Hola! Estoy interesado en más información sobre ${equipo.marca} ${equipo.nombre}`;
+    }
+  };
+
+  const handleSendMessage = () => {
+    const whatsappUrl = buildWhatsAppUrl(message);
+    window.open(whatsappUrl, "_blank");
+  };
 
   // 🔹 Detectar qué array usar según el rubro
   const dataMap = {
@@ -136,6 +154,14 @@ export const DetalleEquipo = ({ rubro }) => {
           ))}
 
         {/* Especificaciones técnicas */}
+        <a
+          className="link__contacto"
+          href={buildWhatsAppUrl(equipo.nombre)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Contactanos
+        </a>
         {equipo.especificaciones && (
           <ContainerVideoEspecif>
             {/* Video */}
@@ -164,6 +190,14 @@ export const DetalleEquipo = ({ rubro }) => {
                 </ContainerLiEspecif>
               ))}
             </ContainerUlEspecif>
+            <a
+              className="link__contacto"
+              href={buildWhatsAppUrl(equipo.nombre)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contactanos
+            </a>
           </ContainerVideoEspecif>
         )}
 

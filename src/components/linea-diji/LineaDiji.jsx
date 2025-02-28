@@ -96,7 +96,7 @@ export const LineaDiji = ({ heroImage, title }) => {
           </ul>
           <div className="img__third__container">
             <img
-              src="../../assets/imgs/img/diji-impresoras-packaging-industrial.png"
+              src="../../assets/imgs/img/diji-impresoras-packaging-industrial.webp"
               alt="Máquina Diji"
               className="img__third"
             />
@@ -109,7 +109,7 @@ export const LineaDiji = ({ heroImage, title }) => {
           </h3>
           <HpContainer>
             <img
-              src="../../assets/imgs/img/hp.png"
+              src="../../assets/imgs/img/hp.webp"
               alt="logo HP"
               className="hp__container"
             />

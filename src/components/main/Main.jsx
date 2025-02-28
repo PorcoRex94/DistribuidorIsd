@@ -41,28 +41,28 @@ export const Main = () => {
   }, []);
 
   const logosFila1 = [
-    "/assets/imgs/logos/logo-allwin-original.png",
-    "/assets/imgs/logos/logo-saga-original.png",
-    "/assets/imgs/logos/logo-diji-original.png",
-    "/assets/imgs/logos/logo-flora-original.png",
-    "/assets/imgs/logos/logo-gweike-original.png",
-    "/assets/imgs/logos/logo-hd-digital-original.png",
+    "/assets/imgs/logos/logo-allwin-original.webp",
+    "/assets/imgs/logos/logo-saga-original.webp",
+    "/assets/imgs/logos/logo-diji-original.webp",
+    "/assets/imgs/logos/logo-flora-original.webp",
+    "/assets/imgs/logos/logo-gweike-original.webp",
+    "/assets/imgs/logos/logo-hd-digital-original.webp",
   ];
 
   const logosFila2 = [
-    "/assets/imgs/logos/logo-iecho-original.png",
-    "/assets/imgs/logos/logo-industrial-inkjet-original.png",
-    "/assets/imgs/logos/logo-mimaki-original.png",
-    "/assets/imgs/logos/logo-unikonex-original.png",
-    "/assets/imgs/logos/logo-apex-original.png",
-    "/assets/imgs/logos/logo-fayon-original.png",
-    "/assets/imgs/logos/logo-pengda-original.png",
+    "/assets/imgs/logos/logo-iecho-original.webp",
+    "/assets/imgs/logos/logo-industrial-inkjet-original.webp",
+    "/assets/imgs/logos/logo-mimaki-original.webp",
+    "/assets/imgs/logos/logo-unikonex-original.webp",
+    "/assets/imgs/logos/logo-apex-original.webp",
+    "/assets/imgs/logos/logo-fayon-original.webp",
+    "/assets/imgs/logos/logo-pengda-original.webp",
   ];
 
   return (
     <main className="main">
       <Hero
-        backgroundImage={"../../assets/imgs/img/hero-portada.jpg"}
+        backgroundImage={"../../assets/imgs/img/hero-portada.webp"}
         title={
           <>
             Daniel Moras <span className="hide-on-mobile">-</span> Distribuidor
@@ -118,7 +118,7 @@ export const Main = () => {
           <ContainerInfoRubro>
             <ContainerImgRubro>
               <img
-                src="../assets/imgs/img/editorial-index.png"
+                src="../assets/imgs/img/editorial-index.webp"
                 alt="Rubro editorial"
                 className="img__rubro"
               />
@@ -147,7 +147,7 @@ export const Main = () => {
             </ContainerHTPRubro>
             <ContainerImgRubro>
               <img
-                src="../assets/imgs/img/etiquetas-index.png"
+                src="../assets/imgs/img/etiquetas-index.webp"
                 alt="Rubro editorial"
                 className="img__rubro__der"
               />
@@ -156,7 +156,7 @@ export const Main = () => {
           <ContainerInfoRubro>
             <ContainerImgRubro>
               <img
-                src="../assets/imgs/img/packaging-index.png"
+                src="../assets/imgs/img/packaging-index.webp"
                 alt="Rubro editorial"
                 className="img__rubro"
               />
@@ -186,7 +186,7 @@ export const Main = () => {
             </ContainerHTPRubro>
             <ContainerImgRubro>
               <img
-                src="../assets/imgs/img/textil-index.png"
+                src="../assets/imgs/img/textil-index.webp"
                 alt="Rubro editorial"
                 className="img__rubro__der"
               />
@@ -195,7 +195,7 @@ export const Main = () => {
           <ContainerInfoRubro>
             <ContainerImgRubro>
               <img
-                src="../assets/imgs/img/cvisual-index.png"
+                src="../assets/imgs/img/cvisual-index.webp"
                 alt="Rubro editorial"
                 className="img__rubro"
               />
@@ -210,6 +210,26 @@ export const Main = () => {
                 Ver Equipos
               </Link>
             </ContainerHTPRubro>
+          </ContainerInfoRubro>
+          <ContainerInfoRubro>
+            <ContainerHTPRubro>
+              <h3>TINTAS E INSUMOS</h3>
+              <p>
+                ¡Descubrí nuestras tintas y sustratos de alta calidad para
+                impresión digital, diseñados para máxima precisión y
+                rendimiento!
+              </p>
+              <Link to="/insumos" className="link__equipos">
+                Ver Equipos
+              </Link>
+            </ContainerHTPRubro>
+            <ContainerImgRubro>
+              <img
+                src="../assets/imgs/img/tintasInsumos-index.webp"
+                alt="Rubro editorial"
+                className="img__rubro__der"
+              />
+            </ContainerImgRubro>
           </ContainerInfoRubro>
         </GlobalContainerRubros>
       </section>

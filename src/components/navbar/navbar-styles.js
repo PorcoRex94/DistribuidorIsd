@@ -239,13 +239,16 @@ export const ListContainer = styled.ul`
   }
 
   .dropdown__link {
-    padding: 0.75rem 1rem;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0.75rem 0.9rem;
+    font-weight: 650;
     color: var(--amarillo);
   }
 
   .hand__icon {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .dropdown__link:hover {

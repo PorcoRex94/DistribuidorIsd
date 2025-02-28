@@ -189,11 +189,11 @@ export const CardContainer = styled.div`
     justify-content: center;
     align-items: center;
     color: var(--amarillo);
-    font-size: ${(props) => (props.$isDiji ? "1.2rem" : "1rem")};
+    font-size: ${(props) => (props.$isDiji ? "1.2rem" : "1.1rem")};
     font-weight: 650;
 
     @media (max-width: 768px) {
-      font-size: ${(props) => (props.$isDiji ? "1rem" : "1rem")};
+      font-size: ${(props) => (props.$isDiji ? "1.1rem" : "1.1rem")};
     }
   }
 

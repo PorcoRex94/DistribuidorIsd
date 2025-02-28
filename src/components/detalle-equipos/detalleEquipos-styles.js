@@ -82,6 +82,27 @@ export const DetallesContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .link__contacto {
+    display: inline-block;
+    position: relative;
+    background-color: var(--verdeOscuro);
+    color: var(--amarillo);
+    border: 3px solid var(--amarillo);
+    border-radius: 18px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 15px;
+    z-index: 2;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .link__contacto:hover {
+    background-color: var(--verdeClaro);
+    scale: calc(1.1);
+  }
 `;
 
 export const TextoAdicionalContainer = styled.div`

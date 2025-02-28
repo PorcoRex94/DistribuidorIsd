@@ -35,6 +35,7 @@ export const ChatButton = styled.button`
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     transform: scale(1.1);
@@ -118,7 +119,7 @@ export const CloseButton = styled.button`
 export const ScrollToTopButton = styled.button`
   position: fixed;
   bottom: 90px;
-  right: 30.5px;
+  right: 30px;
   width: 40px;
   height: 40px;
   background: var(--verdeClaro);
@@ -131,6 +132,7 @@ export const ScrollToTopButton = styled.button`
   cursor: pointer;
   border: 3px solid var(--amarillo);
   transition: opacity 0.3s, transform 0.3s;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     background-color: var(--verdeOscuro);

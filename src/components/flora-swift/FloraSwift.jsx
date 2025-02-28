@@ -72,12 +72,12 @@ export const FloraSwift = ({ heroImage, title }) => {
         <SecondContainerFS>
           <ImgContainer>
             <img
-              src="../../assets/imgs/logos/logo-flora-original.png"
+              src="../../assets/imgs/logos/logo-flora-original.webp"
               alt="Logo Flora"
               className="logo__flora"
             />
             <img
-              src="../../assets/img-editorial/flora-swift440.png"
+              src="../../assets/img-editorial/flora-swift440.webp"
               alt="Máquina flora"
               className="swift__flora"
             />
@@ -152,7 +152,7 @@ export const FloraSwift = ({ heroImage, title }) => {
             </p>
           </ContainerHTP>
           <img
-            src="../../assets/imgs/img/single-y-multi-pass-isd-moras-web.png"
+            src="../../assets/imgs/img/single-y-multi-pass-isd-moras-web.webp"
             alt="imágen single pass"
             className="single__pass"
           />

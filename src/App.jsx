@@ -18,6 +18,8 @@ import { FloraPhenix } from "./components/flora-swift/FloraPhenix";
 import { equiposEtiquetas } from "./data/equiposEtiquetas";
 import { FloraJTresCinco } from "./components/flora-swift/FloraJTresCinco";
 import { ScrollToTop } from "./components/scroll-to-top/ScrollToTop";
+import { tintasInsumos } from "./data/tintasInsumos";
+import { TinSumos } from "./components/tintas-insumos/TinSumos";
 
 function App() {
   const setScrollbarWidth = () => {
@@ -56,7 +58,7 @@ function App() {
                 rubro="packaging"
                 data={equiposPackaging}
                 title="Industria del Packaging"
-                heroImage="../../assets/imgs/img/packaging.jpg"
+                heroImage="../../assets/imgs/img/packaging.webp"
               />
             }
           />
@@ -67,7 +69,7 @@ function App() {
                 rubro="textil"
                 data={equiposTextil}
                 title="Industria Textil"
-                heroImage="../../assets/imgs/img/textil.jpg"
+                heroImage="../../assets/imgs/img/textil.webp"
               />
             }
           />
@@ -78,7 +80,7 @@ function App() {
                 rubro="comunicacionVisual"
                 data={equiposComunicVisual}
                 title="Comunicación Visual"
-                heroImage="../../assets/imgs/img/comunicacion-visual.jpg"
+                heroImage="../../assets/imgs/img/comunicacion-visual.webp"
               />
             }
           />
@@ -89,7 +91,7 @@ function App() {
                 rubro="editorial"
                 data={equiposEditorial}
                 title="Editorial"
-                heroImage="../../assets/imgs/img/editorial.jpg"
+                heroImage="../../assets/imgs/img/editorial.webp"
               />
             }
           />
@@ -100,7 +102,18 @@ function App() {
                 rubro="etiquetas"
                 data={equiposEtiquetas}
                 title="Etiquetas"
-                heroImage="../../assets/imgs/img/etiquetas.jpg"
+                heroImage="../../assets/imgs/img/etiquetas.webp"
+              />
+            }
+          />
+          <Route
+            path="/insumos"
+            element={
+              <Rubro
+                rubro="insumos"
+                productos={tintasInsumos}
+                title="Tintas e Insumos"
+                heroImage="../../assets/imgs/img/tintas-insumos.webp"
               />
             }
           />
@@ -110,7 +123,7 @@ function App() {
             element={
               <LineaDiji
                 title="Innova tu empresa con tecnología Inkjet 1 Pass"
-                heroImage="../../assets/imgs/img/packaging.jpg"
+                heroImage="../../assets/imgs/img/packaging.webp"
                 equiposDiji={equiposDiji}
               />
             }
@@ -120,7 +133,7 @@ function App() {
             element={
               <FloraSwift
                 title="¡Imprimí el Futuro con la Rotativa Inkjet Digital Flora Swift440!"
-                heroImage="../../assets/imgs/img/editorial.jpg"
+                heroImage="../../assets/imgs/img/editorial.webp"
               />
             }
           />
@@ -129,7 +142,7 @@ function App() {
             element={
               <FloraPhenix
                 title="¡Bienvenido al Futuro de la Impresión Editorial con la Flora Phenix440!"
-                heroImage="../../assets/imgs/img/DSC_0256.jpg"
+                heroImage="../../assets/imgs/img/DSC_0256.webp"
               />
             }
           />
@@ -138,7 +151,7 @@ function App() {
             element={
               <FloraJTresCinco
                 title="¡LA REVOLUCIÓN DIGITAL PARA ETIQUETAS YA LLEGÓ!"
-                heroImage="../../assets/imgs/img/DSC_0256.jpg"
+                heroImage="../../assets/imgs/img/DSC_0256.webp"
               />
             }
           />
@@ -167,6 +180,7 @@ function App() {
             path="/linea-diji/:id"
             element={<DetalleEquipo rubro="linea-diji" />}
           />
+          <Route path="/insumos/:id" element={<TinSumos insumos="tinSumo" />} />
         </Routes>
         <Footer />
       </Router>

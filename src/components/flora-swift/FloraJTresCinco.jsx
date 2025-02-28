@@ -74,12 +74,12 @@ export const FloraJTresCinco = ({ heroImage, title }) => {
         <SecondContainerFS>
           <ImgContainer>
             <img
-              src="../../assets/imgs/logos/logo-flora-original.png"
+              src="../../assets/imgs/logos/logo-flora-original.webp"
               alt="Logo Flora"
               className="logo__flora"
             />
             <img
-              src="../../assets/img-etiquetas/flora-j350gt-flexo-inkjet-etiquetas.png"
+              src="../../assets/img-etiquetas/flora-j350gt-flexo-inkjet-etiquetas.webp"
               alt="Máquina flora"
               className="swift__flora"
             />
@@ -154,7 +154,7 @@ export const FloraJTresCinco = ({ heroImage, title }) => {
             </p>
           </ContainerHTP>
           <img
-            src="../../assets/imgs/img/single-y-multi-pass-isd-moras-web.png"
+            src="../../assets/imgs/img/single-y-multi-pass-isd-moras-web.webp"
             alt="imágen single pass"
             className="single__pass"
           />

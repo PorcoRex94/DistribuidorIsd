@@ -84,7 +84,6 @@ export const Navbar = () => {
   };
 
   const closeMenu = () => {
-    console.log("Cerrando menú...");
     setIsOpen(false);
     document.body.style.position = "unset";
 
@@ -105,7 +104,7 @@ export const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="nav__logo">
           <LogoImg
-            src="../../assets/imgs/logos/logo-moras.png"
+            src="../../assets/imgs/logos/logo-moras.webp"
             alt="Logo Moras y compañia"
           />
         </Link>
@@ -156,10 +155,23 @@ export const Navbar = () => {
                 className="nav__link"
                 onClick={() => handleDropdownToggle(0)}
               >
-                Rubros <IoIosArrowDown className="dropdown__arrow" />
+                Soluciones <IoIosArrowDown className="dropdown__arrow" />
               </div>
 
               <ul className="dropdown__menu">
+                <li>
+                  <Link
+                    to="/insumos"
+                    className="dropdown__link"
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      closeMenu();
+                    }}
+                  >
+                    <FaRegHandPointRight className="hand__icon" /> Tintas e
+                    Insumos
+                  </Link>
+                </li>
                 <li>
                   <Link
                     to="/editorial"

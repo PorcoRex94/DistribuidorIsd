@@ -226,6 +226,11 @@ export const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media (max-width: 768px) {
+    height: 605px;
+    min-width: 92.5vw;
+  }
+
   .card-inner {
     position: relative;
     width: 100%;
@@ -237,6 +242,15 @@ export const CardContainer = styled.div`
 
   &.flipped .card-inner {
     transform: rotateY(-180deg);
+  }
+
+  @media (max-width: 960px) {
+    .card-inner {
+      transform: none;
+    }
+    &.flipped .card-inner {
+      transform: none;
+    }
   }
 
   .card-front,
@@ -272,7 +286,10 @@ export const CardContainer = styled.div`
     align-items: center;
     height: 50%;
     width: 100%;
-    border: 1px solid tan;
+
+    @media (max-width: 768px) {
+      height: 60%;
+    }
   }
 
   .card-back {
@@ -285,11 +302,21 @@ export const CardContainer = styled.div`
     width: 90%;
     height: 55%;
     margin: 5px 0;
+
+    @media (max-width: 768px) {
+      width: 75%;
+      height: 68%;
+    }
   }
 
   .card-logo {
     max-width: 50%;
     max-height: 50%;
+
+    @media (max-width: 768px) {
+      width: 30.5%;
+      height: 30.5%;
+    }
   }
 
   .text__container {
@@ -332,12 +359,17 @@ export const CardContainer = styled.div`
   .p__description {
     width: 75%;
     height: 50%;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--amarillo);
     font-size: 1.2rem;
     font-weight: 650;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
   }
 
   .p__detalles {
