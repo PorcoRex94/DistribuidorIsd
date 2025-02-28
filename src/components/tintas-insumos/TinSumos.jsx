@@ -17,7 +17,6 @@ import {
   InfoTextDos,
 } from "./tinSumos-styles.js";
 import { tintasInsumos } from "../../data/tintasInsumos";
-import { BsFire } from "react-icons/bs";
 
 export const TinSumos = ({ insumos }) => {
   const { id } = useParams();
@@ -79,7 +78,6 @@ export const TinSumos = ({ insumos }) => {
         </ContainerHeroImages>
       </Hero>
 
-      {/* Información del Producto */}
       <Info>
         <InfoText>
           <h2>{producto.descripcionTituloDos}</h2>
@@ -91,9 +89,7 @@ export const TinSumos = ({ insumos }) => {
         <Info>
           <InfoTextDos>
             <h2>{producto.tituloInformacionAdicional}</h2>
-            <p style={{ whiteSpace: "pre-line" }}>
-              {producto.informacionAdicional}
-            </p>
+            <p>{producto.informacionAdicional}</p>
           </InfoTextDos>
         </Info>
       )}
@@ -137,7 +133,6 @@ export const TinSumos = ({ insumos }) => {
           <p>{producto.descripcionRecomendacion}</p>
           <p>{producto.descripcionRecomendacionDos}</p>
           <p className="adicional">
-            <BsFire style={{ fontSize: "1.2rem" }} />
             {producto.descripcionRecomendacionAdicional}
           </p>
           <Button
