@@ -183,7 +183,7 @@ export const tintasInsumos = [
   },
   {
     id: 4,
-    nombre: "DIJI SL2",
+    nombre: "DIJI SL2 SOLVENTE",
     marca: "DIJI",
     imagen: "../../assets/img-tinsumos/tinta-diji-sl2.webp",
     logo: "../../assets/imgs/logos/logo-diji-original.webp",
@@ -192,7 +192,8 @@ export const tintasInsumos = [
       "Colores intensos, máxima compatibilidad y un rendimiento excepcional para todas tus impresiones.",
     detalles:
       "Las tintas DIJI SL2 están formuladas para ofrecer una calidad de impresión superior, con colores vibrantes, secado uniforme y excelente durabilidad. Disponibles en distintos formatos y colores para adaptarse a diversas aplicaciones.",
-    descripcion: "Tinta de calidad premium para resultados profesionales",
+    descripcion:
+      "Tinta Solvente de calidad premium para resultados profesionales",
     descripcionTitulo: "Precisión y rendimiento en cada gota",
     descripcionTituloDos: "Colores fieles y consistencia garantizada",
     descripcionDos:
@@ -204,6 +205,10 @@ export const tintasInsumos = [
       "Su secado optimizado minimiza el desperdicio de tinta y reduce el tiempo de trabajo, aumentando la productividad.\n\n" +
       "Con las Tintas DIJI SL2, asegurás impresiones de alta calidad, con colores vibrantes y una durabilidad excepcional.",
     beneficios: [
+      {
+        titulo: "Durabilidad",
+        descripcion: "Durabilidad a la intemperie 2 años",
+      },
       {
         titulo: "Colores Intensos y Definidos",
         descripcion:
@@ -577,7 +582,7 @@ export const tintasInsumos = [
   },
   {
     id: 11,
-    nombre: "Allwin Solvent K512i",
+    nombre: "Allwin Solvente K512i",
     marca: "Allwin",
     imagen: "../../assets/img-tinsumos/tintas-allwin-k512i.webp",
     logo: "../../assets/imgs/logos/logo-allwin-original.webp",
@@ -856,5 +861,60 @@ export const tintasInsumos = [
       "Garantiza impresiones nítidas y colores consistentes en cada aplicación.",
     descripcionRecomendacionAdicional:
       "Consulta con nosotros para conocer más sobre compatibilidad y aplicaciones específicas.",
+  },
+  {
+    id: 16,
+    nombre: "Allwin ES1 1L",
+    marca: "Allwin",
+    imagen: "../../assets/img-tinsumos/tintas-allwin-ecosolvente-es1.webp",
+    logo: "../../assets/imgs/logos/logo-allwin-original.webp",
+    categoria: "tintas ecosolvente",
+    tagline:
+      "La opción económica que cuida tu bolsillo y tus equipos sin sacrificar calidad.",
+    detalles:
+      "Tinta ecosolvente Allwin ES1 en presentación de 1 litro, con alta densidad de color y secado rápido.",
+    descripcion:
+      "Colores vivos y excelente compatibilidad en formato de 1 litro",
+    descripcionTitulo:
+      "Compatibilidad con cabezales Epson: DX4, DX5, DX6, DX7, XP600, TX800, i3200, L1440.",
+    descripcionTituloDos: "Compatibilidad con equipos Mimaki y Roland",
+    descripcionDos:
+      "Compatible con Mimaki JV3, JV33, JV34, CJV30, JV150, JV300, CJV150 y CJV300. También con Roland RS, RE, RA, VS, VP, SP, XJ, XC, XF, XR y EJ.",
+    tituloInformacionAdicional: "Colores vibrantes y máxima eficiencia",
+    informacionAdicional:
+      "Con una fórmula optimizada para ofrecer colores brillantes y alta densidad, Allwin ES1 permite ahorrar en consumo sin comprometer la calidad de impresión.",
+    beneficios: [
+      {
+        titulo: "Alta compatibilidad",
+        descripcion:
+          "Funciona perfectamente con una amplia gama de cabezales Epson, Mimaki y Roland.",
+      },
+      {
+        titulo: "Colores vivos y duraderos",
+        descripcion:
+          "Brinda impresiones con tonos intensos y una excelente nitidez en distintos materiales.",
+      },
+      {
+        titulo: "Secado rápido y eficiencia",
+        descripcion:
+          "Optimiza el proceso de impresión reduciendo tiempos de espera.",
+      },
+      {
+        titulo: "Baja emisión de vapores",
+        descripcion: "Garantiza un entorno de trabajo más seguro y cómodo.",
+      },
+      {
+        titulo: "Económica y confiable",
+        descripcion:
+          "Diseñada para reducir costos sin afectar la calidad de impresión.",
+      },
+    ],
+    recomendacion: "La mejor opción para reducir costos sin perder calidad",
+    descripcionRecomendacion:
+      "Ideal para impresores que buscan una tinta confiable y económica, sin comprometer la durabilidad y los colores vibrantes.",
+    descripcionRecomendacionDos:
+      "Su compatibilidad con múltiples cabezales la convierte en una opción versátil para distintos tipos de impresión.",
+    descripcionRecomendacionAdicional:
+      "Cumple con normativas CPISA, Prop 65 y EN 71-3, asegurando un producto libre de sustancias nocivas.",
   },
 ];

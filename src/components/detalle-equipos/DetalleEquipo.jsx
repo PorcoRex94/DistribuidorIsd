@@ -31,6 +31,7 @@ import { equiposDiji } from "../../data/equiposDiji";
 import { equiposComunicVisual } from "../../data/equiposComunicVisual";
 import { equiposEditorial } from "../../data/equiposEditorial";
 import { equiposEtiquetas } from "../../data/equiposEtiquetas";
+import { Helmet } from "react-helmet";
 
 export const DetalleEquipo = ({ rubro }) => {
   const { id } = useParams();
@@ -77,162 +78,177 @@ export const DetalleEquipo = ({ rubro }) => {
   }
 
   return (
-    <GlobalContainer>
-      <ImgHUnoContainer>
-        <ContainerHache>
-          <h1>{equipo.nombre}</h1>
-          <h2> {equipo.descripcion} </h2>
-        </ContainerHache>
-        <ContainerImgs>
-          <ImgLogo src={equipo.logo} alt={equipo.marca} />
-          <ImgEquipo src={equipo.imagen} alt={equipo.nombre} />
-        </ContainerImgs>
-      </ImgHUnoContainer>
-      <DetallesContainer>
-        {/* Textos adicionales */}
-        {equipo.textosAdicionales &&
-          equipo.textosAdicionales.map((texto, index) => (
-            <TextoAdicionalContainer key={index}>
-              <TituloTextoAdicional>{texto.titulo}</TituloTextoAdicional>
-              <ContenidoTextoAdicional>
-                {texto.contenido}
-              </ContenidoTextoAdicional>
-            </TextoAdicionalContainer>
-          ))}
-
-        {equipo.funcionesClaves && (
-          <ContainerInfo>
-            <HacheDosInfo>{equipo.textoHacheDosUno}</HacheDosInfo>
-            <ul>
-              {equipo.funcionesClaves.map((funcion, index) => {
-                const formattedFunction = funcion.replace(
-                  /(.*?):/,
-                  "<strong>$1:</strong>"
-                );
-
-                return (
-                  <ContainerLi key={index}>
-                    <InfoP
-                      dangerouslySetInnerHTML={{ __html: formattedFunction }}
-                    />
-                  </ContainerLi>
-                );
-              })}
-            </ul>
-          </ContainerInfo>
-        )}
-
-        {equipo.funcionesDestacadas && (
-          <ContainerInfo>
-            <HacheDosInfo>{equipo.textoHacheDosDos}</HacheDosInfo>
-            {equipo.funcionesDestacadas.map((funcion, index) => (
-              <ContainerLi key={index}>
-                <InfoP dangerouslySetInnerHTML={{ __html: funcion }} />
-              </ContainerLi>
+    <>
+      <Helmet>
+        <title>
+          Equipo {id} - {rubro} | Daniel Moras
+        </title>
+        <meta
+          name="description"
+          content={`Descubre el equipo ${id} de la industria ${rubro}.`}
+        />
+        <link
+          rel="canonical"
+          href={`https://danielmoras.com.ar/${rubro}/${id}`}
+        />
+      </Helmet>
+      <GlobalContainer>
+        <ImgHUnoContainer>
+          <ContainerHache>
+            <h1>{equipo.nombre}</h1>
+            <h2> {equipo.descripcion} </h2>
+          </ContainerHache>
+          <ContainerImgs>
+            <ImgLogo src={equipo.logo} alt={equipo.marca} />
+            <ImgEquipo src={equipo.imagen} alt={equipo.nombre} />
+          </ContainerImgs>
+        </ImgHUnoContainer>
+        <DetallesContainer>
+          {/* Textos adicionales */}
+          {equipo.textosAdicionales &&
+            equipo.textosAdicionales.map((texto, index) => (
+              <TextoAdicionalContainer key={index}>
+                <TituloTextoAdicional>{texto.titulo}</TituloTextoAdicional>
+                <ContenidoTextoAdicional>
+                  {texto.contenido}
+                </ContenidoTextoAdicional>
+              </TextoAdicionalContainer>
             ))}
-          </ContainerInfo>
-        )}
 
-        {equipo.textosAdicionalesDos &&
-          equipo.textosAdicionalesDos.map((texto, index) => (
-            <TextoAdicionalContainer key={index}>
-              <TituloTextoAdicional>{texto.titulo}</TituloTextoAdicional>
-              <ContenidoTextoAdicional>
-                {texto.contenido}
-              </ContenidoTextoAdicional>
-            </TextoAdicionalContainer>
-          ))}
+          {equipo.funcionesClaves && (
+            <ContainerInfo>
+              <HacheDosInfo>{equipo.textoHacheDosUno}</HacheDosInfo>
+              <ul>
+                {equipo.funcionesClaves.map((funcion, index) => {
+                  const formattedFunction = funcion.replace(
+                    /(.*?):/,
+                    "<strong>$1:</strong>"
+                  );
 
-        {equipo.textosAdicionalesTres &&
-          equipo.textosAdicionalesTres.map((texto, index) => (
-            <TextoAdicionalContainer key={index}>
-              <TituloTextoAdicional>{texto.titulo}</TituloTextoAdicional>
-              <ContenidoTextoAdicional>
-                {texto.contenido}
-              </ContenidoTextoAdicional>
-            </TextoAdicionalContainer>
-          ))}
+                  return (
+                    <ContainerLi key={index}>
+                      <InfoP
+                        dangerouslySetInnerHTML={{ __html: formattedFunction }}
+                      />
+                    </ContainerLi>
+                  );
+                })}
+              </ul>
+            </ContainerInfo>
+          )}
 
-        {/* Especificaciones técnicas */}
-        <a
-          className="link__contacto"
-          href={buildWhatsAppUrl(equipo.nombre)}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Contactanos
-        </a>
-        {equipo.especificaciones && (
-          <ContainerVideoEspecif>
-            {/* Video */}
-            {equipo.video && (
-              <ContainerVideo style={{ marginTop: "20px" }}>
-                <iframe
-                  width="100%"
-                  height="400px"
-                  src={equipo.video}
-                  title={equipo.nombre}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </ContainerVideo>
-            )}
-            <ContainerUlEspecif>
-              <HacheDosInfo>Especificaciones Técnicas</HacheDosInfo>
-              {equipo.especificaciones.map((spec, index) => (
-                <ContainerLiEspecif key={index}>
-                  <strong className="strong">
-                    <TbPointFilled />
-                    {spec.titulo}:
-                  </strong>
-                  {spec.valor}
-                </ContainerLiEspecif>
+          {equipo.funcionesDestacadas && (
+            <ContainerInfo>
+              <HacheDosInfo>{equipo.textoHacheDosDos}</HacheDosInfo>
+              {equipo.funcionesDestacadas.map((funcion, index) => (
+                <ContainerLi key={index}>
+                  <InfoP dangerouslySetInnerHTML={{ __html: funcion }} />
+                </ContainerLi>
               ))}
-            </ContainerUlEspecif>
-            <a
-              className="link__contacto"
-              href={buildWhatsAppUrl(equipo.nombre)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Contactanos
-            </a>
-          </ContainerVideoEspecif>
-        )}
+            </ContainerInfo>
+          )}
 
-        {/* PDF */}
-        {equipo.pdf && (
-          <ContainerPdf
-            style={{
-              marginTop: "20px",
-              textAlign: "center",
-            }}
-          >
-            <LinkPdf
-              href={equipo.pdf}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <BsFillFileEarmarkPdfFill
-                style={{
-                  fontSize: "3.5rem",
-                }}
-              />
-              Descargar PDF
-            </LinkPdf>
-          </ContainerPdf>
-        )}
+          {equipo.textosAdicionalesDos &&
+            equipo.textosAdicionalesDos.map((texto, index) => (
+              <TextoAdicionalContainer key={index}>
+                <TituloTextoAdicional>{texto.titulo}</TituloTextoAdicional>
+                <ContenidoTextoAdicional>
+                  {texto.contenido}
+                </ContenidoTextoAdicional>
+              </TextoAdicionalContainer>
+            ))}
 
-        <div style={{ padding: "35px" }}>
-          <Btn
-            onClick={() => window.history.back()}
-            style={{ margin: "20px 0" }}
+          {equipo.textosAdicionalesTres &&
+            equipo.textosAdicionalesTres.map((texto, index) => (
+              <TextoAdicionalContainer key={index}>
+                <TituloTextoAdicional>{texto.titulo}</TituloTextoAdicional>
+                <ContenidoTextoAdicional>
+                  {texto.contenido}
+                </ContenidoTextoAdicional>
+              </TextoAdicionalContainer>
+            ))}
+
+          {/* Especificaciones técnicas */}
+          <a
+            className="link__contacto"
+            href={buildWhatsAppUrl(equipo.nombre)}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Volver
-          </Btn>
-        </div>
-      </DetallesContainer>
-    </GlobalContainer>
+            Contactanos
+          </a>
+          {equipo.especificaciones && (
+            <ContainerVideoEspecif>
+              {/* Video */}
+              {equipo.video && (
+                <ContainerVideo style={{ marginTop: "20px" }}>
+                  <iframe
+                    width="100%"
+                    height="400px"
+                    src={equipo.video}
+                    title={equipo.nombre}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </ContainerVideo>
+              )}
+              <ContainerUlEspecif>
+                <HacheDosInfo>Especificaciones Técnicas</HacheDosInfo>
+                {equipo.especificaciones.map((spec, index) => (
+                  <ContainerLiEspecif key={index}>
+                    <strong className="strong">
+                      <TbPointFilled />
+                      {spec.titulo}:
+                    </strong>
+                    {spec.valor}
+                  </ContainerLiEspecif>
+                ))}
+              </ContainerUlEspecif>
+              <a
+                className="link__contacto"
+                href={buildWhatsAppUrl(equipo.nombre)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contactanos
+              </a>
+            </ContainerVideoEspecif>
+          )}
+
+          {/* PDF */}
+          {equipo.pdf && (
+            <ContainerPdf
+              style={{
+                marginTop: "20px",
+                textAlign: "center",
+              }}
+            >
+              <LinkPdf
+                href={equipo.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <BsFillFileEarmarkPdfFill
+                  style={{
+                    fontSize: "3.5rem",
+                  }}
+                />
+                Descargar PDF
+              </LinkPdf>
+            </ContainerPdf>
+          )}
+
+          <div style={{ padding: "35px" }}>
+            <Btn
+              onClick={() => window.history.back()}
+              style={{ margin: "20px 0" }}
+            >
+              Volver
+            </Btn>
+          </div>
+        </DetallesContainer>
+      </GlobalContainer>
+    </>
   );
 };

@@ -17,6 +17,7 @@ import {
   InfoTextDos,
 } from "./tinSumos-styles.js";
 import { tintasInsumos } from "../../data/tintasInsumos";
+import { Helmet } from "react-helmet";
 
 export const TinSumos = ({ insumos }) => {
   const { id } = useParams();
@@ -24,13 +25,12 @@ export const TinSumos = ({ insumos }) => {
 
   const buildWhatsAppUrl = (message) => {
     const phoneNumber = "5491166722505"; // Número internacional
-    const encodedMessage = encodeURIComponent(message || "¡Hola!"); //
 
     if (isMobile) {
-      return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=¡Hola! Estoy interesado en más información sobre ${producto.marca} ${producto.nombre}`;
+      return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=¡Hola! Estoy interesado en más información sobre ${producto.nombre}`;
     } else {
       // Escritorio: usar WhatsApp Web
-      return `https://web.whatsapp.com/send?phone=${phoneNumber}&text=¡Hola! Estoy interesado en más información sobre ${producto.marca} ${producto.nombre}`;
+      return `https://web.whatsapp.com/send?phone=${phoneNumber}&text=¡Hola! Estoy interesado en más información sobre ${producto.nombre}`;
     }
   };
 
@@ -56,94 +56,111 @@ export const TinSumos = ({ insumos }) => {
   }
 
   return (
-    <Main>
-      {/* Hero */}
-      <Hero>
-        <HeroContent>
-          <h1>{producto.nombre}</h1>
-          <h2>{producto.descripcionTitulo}</h2>
-          <p>{producto.tagline}</p>
-          <Button
-            className="first__button"
-            href={buildWhatsAppUrl(producto.nombre)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Consultar
-          </Button>
-        </HeroContent>
-        <ContainerHeroImages>
-          <img src={producto.logo} alt={producto.marca} className="logo__img" />
-          <HeroImage src={producto.imagen} alt={producto.nombre} />
-        </ContainerHeroImages>
-      </Hero>
+    <>
+      <Helmet>
+        <title>{producto.nombre} - Tintas e Insumos | Daniel Moras</title>
+        <meta
+          name="description"
+          content={`Descubre ${producto.nombre}: ${producto.descripcionTitulo}.`}
+        />
+        <link
+          rel="canonical"
+          href={`https://danielmoras.com.ar/tinsumos/${id}`}
+        />
+      </Helmet>
+      <Main>
+        {/* Hero */}
+        <Hero>
+          <HeroContent>
+            <h1>{producto.nombre}</h1>
+            <h2>{producto.descripcionTitulo}</h2>
+            <p>{producto.tagline}</p>
+            <Button
+              className="first__button"
+              href={buildWhatsAppUrl(producto.nombre)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Consultar
+            </Button>
+          </HeroContent>
+          <ContainerHeroImages>
+            <img
+              src={producto.logo}
+              alt={producto.marca}
+              className="logo__img"
+            />
+            <HeroImage src={producto.imagen} alt={producto.nombre} />
+          </ContainerHeroImages>
+        </Hero>
 
-      <Info>
-        <InfoText>
-          <h2>{producto.descripcionTituloDos}</h2>
-          <p>{producto.descripcionDos}</p>
-        </InfoText>
-      </Info>
-
-      {!producto.opciones?.length && producto.informacionAdicional && (
         <Info>
-          <InfoTextDos>
-            <h2>{producto.tituloInformacionAdicional}</h2>
-            <p>{producto.informacionAdicional}</p>
-          </InfoTextDos>
+          <InfoText>
+            <h2>{producto.descripcionTituloDos}</h2>
+            <p>{producto.descripcionDos}</p>
+          </InfoText>
         </Info>
-      )}
 
-      {/* Si tiene opciones, mostramos la tabla */}
-      {producto.opciones?.length > 0 && (
-        <TableContainer>
-          <h2>Opciones Disponibles</h2>
-          <Table>
-            <thead>
-              <tr>
-                <th>Gramaje</th>
-                <th>Medida</th>
-                <th>Core</th>
-              </tr>
-            </thead>
-            <tbody>
-              {producto.opciones.map((opt, index) => (
-                <tr key={index}>
-                  <td>{opt.gramaje}</td>
-                  <td>{opt.medida}</td>
-                  <td>{opt.core}</td>
+        {!producto.opciones?.length && producto.informacionAdicional && (
+          <Info>
+            <InfoTextDos>
+              <h2>{producto.tituloInformacionAdicional}</h2>
+              <p>{producto.informacionAdicional}</p>
+            </InfoTextDos>
+          </Info>
+        )}
+
+        {/* Si tiene opciones, mostramos la tabla */}
+        {producto.opciones?.length > 0 && (
+          <TableContainer>
+            <h2>Opciones Disponibles</h2>
+            <Table>
+              <thead>
+                <tr>
+                  <th>Gramaje</th>
+                  <th>Medida</th>
+                  <th>Core</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-        </TableContainer>
-      )}
+              </thead>
+              <tbody>
+                {producto.opciones.map((opt, index) => (
+                  <tr key={index}>
+                    <td>{opt.gramaje}</td>
+                    <td>{opt.medida}</td>
+                    <td>{opt.core}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </TableContainer>
+        )}
 
-      <CaracteristicasContainer>
-        <Caracteristicas>
-          <h2>¿Por qué elegir {producto.nombre}?</h2>
-          {producto.beneficios?.map((beneficio, index) => (
-            <p key={index}>
-              <strong>{beneficio.titulo}:</strong> {beneficio.descripcion}
+        <CaracteristicasContainer>
+          <Caracteristicas>
+            <h2>¿Por qué elegir {producto.nombre}?</h2>
+            {producto.beneficios?.map((beneficio, index) => (
+              <p key={index}>
+                <strong>{beneficio.titulo}:</strong> {beneficio.descripcion}
+              </p>
+            ))}
+          </Caracteristicas>
+          <CTA>
+            <h2>{producto.recomendacion}</h2>
+            <p>{producto.descripcionRecomendacion}</p>
+            <p>{producto.descripcionRecomendacionDos}</p>
+            <p className="adicional">
+              {producto.descripcionRecomendacionAdicional}
             </p>
-          ))}
-        </Caracteristicas>
-        <CTA>
-          <h2>{producto.recomendacion}</h2>
-          <p>{producto.descripcionRecomendacion}</p>
-          <p>{producto.descripcionRecomendacionDos}</p>
-          <p className="adicional">
-            {producto.descripcionRecomendacionAdicional}
-          </p>
-          <Button
-            href={buildWhatsAppUrl(producto.nombre)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Consultar
-          </Button>
-        </CTA>
-      </CaracteristicasContainer>
-    </Main>
+            <Button
+              href={buildWhatsAppUrl(producto.nombre)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Consultar
+            </Button>
+          </CTA>
+        </CaracteristicasContainer>
+      </Main>
+    </>
   );
 };

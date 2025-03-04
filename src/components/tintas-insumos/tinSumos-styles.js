@@ -24,6 +24,14 @@ export const Hero = styled.div`
   background: var(--verdeClaro);
   color: ${colors.blanco};
   padding: 3rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    text-align: center;
+  }
 `;
 
 export const HeroContent = styled.div`
@@ -43,7 +51,13 @@ export const HeroContent = styled.div`
   }
 
   .first__button {
-    width: 20%;
+    width: 140px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    order: 2;
+    align-items: center;
   }
 `;
 
@@ -60,10 +74,19 @@ export const ContainerHeroImages = styled.div`
     background-color: white;
     border-radius: 30px;
   }
+
+  @media (max-width: 768px) {
+    order: 1;
+    gap: 35px;
+  }
 `;
 
 export const HeroImage = styled.img`
   max-width: 400px;
+
+  @media (max-width: 400px) {
+    width: 350px;
+  }
 `;
 
 /* 🔹 Sección de Información */
@@ -73,12 +96,23 @@ export const Info = styled.section`
   text-align: center;
   padding: 2rem;
   background: ${colors.blanco};
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  @media (max-width: 500px) {
+    padding: 0.5rem;
+  }
 `;
 
 export const InfoText = styled.div`
   width: 100%;
   color: var(--azul);
   text-align: left;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px var(--verdeClaro), -1px -1px 5px var(--verdeClaro);
 
   h2 {
     width: 100%;
@@ -89,17 +123,43 @@ export const InfoText = styled.div`
   p {
     font-size: 1.2rem;
     line-height: 1.6;
-    width: 75%;
+    width: 60%;
+  }
+
+  @media (max-width: 960px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      width: 100%;
+    }
   }
 `;
 
 export const InfoTextDos = styled.div`
   width: 100%;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   color: var(--azul);
   text-align: right;
+  border-radius: 10px;
+  box-shadow: -1px -1px 5px var(--verdeClaro), 1px 1px 5px var(--verdeClaro);
 
   h2 {
     width: 100%;
@@ -111,6 +171,28 @@ export const InfoTextDos = styled.div`
     font-size: 1.2rem;
     line-height: 1.6;
     width: 75%;
+  }
+
+  @media (max-width: 960px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+
+    h2 {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 1.1rem;
+      width: 100%;
+    }
   }
 `;
 
@@ -156,6 +238,11 @@ export const CaracteristicasContainer = styled.section`
   display: flex;
   gap: 15px;
   margin-bottom: 1rem;
+
+  @media (max-width: 960px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 /* 🔹 Características / Beneficios */
@@ -182,6 +269,11 @@ export const Caracteristicas = styled.div`
     strong {
       color: ${colors.azul};
     }
+  }
+
+  @media (max-width: 960px) {
+    width: 98%;
+    padding: 1.5rem;
   }
 `;
 
@@ -213,6 +305,11 @@ export const CTA = styled.div`
     font-weight: 700;
     font-size: 1.4rem;
     line-height: 1.2;
+  }
+
+  @media (max-width: 960px) {
+    width: 98%;
+    padding: 1.5rem;
   }
 `;
 

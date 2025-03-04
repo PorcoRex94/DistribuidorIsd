@@ -5,6 +5,7 @@ import { Card } from "../components/cards/Cards";
 import { CardsContainer } from "../styles/CardContainer";
 import { Hero } from "../components/hero/Hero";
 import { FilterContainer, MainContainer } from "../styles/GlobalStyles";
+import { Helmet } from "react-helmet";
 
 export const Rubro = ({
   data = [],
@@ -60,28 +61,38 @@ export const Rubro = ({
   }, [searchTerm, selectedCategory, data, productos]); // 🔥 Se recalcula solo cuando cambian estos valores
 
   return (
-    <MainContainer>
-      {/* Hero dinámico */}
-      <Hero backgroundImage={heroImage} title={title} />
-
-      {/* Filtros y barra de búsqueda */}
-      <FilterContainer>
-        <Category
-          categories={categories}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
+    <>
+      <Helmet>
+        <title>{title} | Daniel Moras</title>
+        <meta
+          name="description"
+          content="Tecnología inkjet de impresión desde plotter hasta máquinas industriales y sistemas de corte y troquelados."
         />
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      </FilterContainer>
+        <link rel="canonical" href={`https://danielmoras.com.ar/${rubro}`} />
+      </Helmet>
+      <MainContainer>
+        {/* Hero dinámico */}
+        <Hero backgroundImage={heroImage} title={title} />
 
-      {/* Tarjetas dinámicas */}
-      <CardsContainer>
-        <div className="cards-container">
-          {filteredItems.map((item) => (
-            <Card key={item.id} equipo={item} rubro={rubro} />
-          ))}
-        </div>
-      </CardsContainer>
-    </MainContainer>
+        {/* Filtros y barra de búsqueda */}
+        <FilterContainer>
+          <Category
+            categories={categories}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        </FilterContainer>
+
+        {/* Tarjetas dinámicas */}
+        <CardsContainer>
+          <div className="cards-container">
+            {filteredItems.map((item) => (
+              <Card key={item.id} equipo={item} rubro={rubro} />
+            ))}
+          </div>
+        </CardsContainer>
+      </MainContainer>
+    </>
   );
 };
