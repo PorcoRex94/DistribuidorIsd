@@ -63,7 +63,7 @@ export const Rubro = ({
   return (
     <>
       <Helmet>
-        <title>{title} | Daniel Moras</title>
+        <title>{title} - Daniel Moras</title>
         <meta
           name="description"
           content="Tecnología inkjet de impresión desde plotter hasta máquinas industriales y sistemas de corte y troquelados."

@@ -58,7 +58,7 @@ export const TinSumos = ({ insumos }) => {
   return (
     <>
       <Helmet>
-        <title>{producto.nombre} - Tintas e Insumos | Daniel Moras</title>
+        <title>{producto.nombre} - Daniel Moras</title>
         <meta
           name="description"
           content={`Descubre ${producto.nombre}: ${producto.descripcionTitulo}.`}

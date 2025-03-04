@@ -80,9 +80,7 @@ export const DetalleEquipo = ({ rubro }) => {
   return (
     <>
       <Helmet>
-        <title>
-          Equipo {id} - {rubro} | Daniel Moras
-        </title>
+        <title>{equipo.nombre} - Daniel Moras</title>
         <meta
           name="description"
           content={`Descubre el equipo ${id} de la industria ${rubro}.`}
